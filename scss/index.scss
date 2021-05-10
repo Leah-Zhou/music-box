@@ -1,8 +1,17 @@
 @import "_global";
+@import "_form";
+@import "colors";
+@import "_imgs";
+
 html{
   box-sizing: border-box;
   padding: 0;
   margin:0;
+}
+body{
+  background: radial-gradient($primary, $darkPurple);
+  // background-color: rgba($primary, 0.5);
+  position: relative;
 }
 li{
   list-style:none;

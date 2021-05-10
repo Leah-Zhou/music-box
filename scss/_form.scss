@@ -1,0 +1,78 @@
+@import '_colors';
+
+.home-wraper{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.title{
+   max-width: 500px;
+   margin: 2em auto;
+   text-align: center;
+   color:white;
+}
+.form-wrap{
+  width:350px;
+  background-color: rgba(0,0, 0, 0.5);
+  margin: 20px auto;
+  padding: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 13px 15px 20px rgba(0,0,0,0.2);
+}
+.form-content {
+  display: flex;
+  justify-content: flex-start;
+  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+  width: 700px;
+  margin-left: 0%;
+  &>form{
+    width:320px;
+    padding:30px
+  }
+}
+.form-slider{
+  position: relative;
+  width: 320px;
+  display: flex;
+  &>input[type="radio"]{
+    display: none;
+  }
+  &>label{
+    text-align: center;
+    color:white;
+    font-size: 17px;
+    font-size: bold;
+    width:50%;
+  }
+}
+.slider{
+  height: 2px;
+  width: 115px;
+  border-radius: 50px;
+  margin-left: 25px;
+  background-color: $secondary;
+   position: absolute;
+   bottom:-10px;
+   left: 0%;
+   transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+#login:checked~label.login, 
+#signup:checked~label.signup{
+  color:$secondary;
+ }
+ #login:checked~.slider{
+   left: 0%;
+ }
+ #signup:checked~.slider{
+  left: 50%;
+}
+.btn-secondary{
+  margin:1em auto;
+  width: 100%;
+  background-color: $secondary;
+  border:none;
+}
+.btn-secondary:hover{
+  background-color: $primary;
+}

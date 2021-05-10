@@ -1,7 +1,156 @@
+.home-wraper {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  max-width: 500px;
+  margin: 2em auto;
+  text-align: center;
+  color: white;
+}
+
+.form-wrap {
+  width: 350px;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 20px auto;
+  padding: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 13px 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+.form-content {
+  display: flex;
+  justify-content: flex-start;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  width: 700px;
+  margin-left: 0%;
+}
+
+.form-content > form {
+  width: 320px;
+  padding: 30px;
+}
+
+.form-slider {
+  position: relative;
+  width: 320px;
+  display: flex;
+}
+
+.form-slider > input[type="radio"] {
+  display: none;
+}
+
+.form-slider > label {
+  text-align: center;
+  color: white;
+  font-size: 17px;
+  font-size: bold;
+  width: 50%;
+}
+
+.slider {
+  height: 2px;
+  width: 115px;
+  border-radius: 50px;
+  margin-left: 25px;
+  background-color: salmon;
+  position: absolute;
+  bottom: -10px;
+  left: 0%;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+#login:checked ~ label.login,
+#signup:checked ~ label.signup {
+  color: salmon;
+}
+
+#login:checked ~ .slider {
+  left: 0%;
+}
+
+#signup:checked ~ .slider {
+  left: 50%;
+}
+
+.btn-secondary {
+  margin: 1em auto;
+  width: 100%;
+  background-color: salmon;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: #BF7AB4;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  60% {
+    transform: translate(5px, 30px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+.float-headphone {
+  width: 100%;
+  max-width: 250px;
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  z-index: -1;
+  animation: floating infinite 15s 0.6s forwards ease;
+}
+
+@media (min-width: 768px) {
+  .float-headphone {
+    width: 100%;
+    max-width: 250px;
+    position: absolute;
+    top: 5%;
+    left: 65%;
+    z-index: -1;
+  }
+}
+
+.float-person {
+  width: 100%;
+  max-width: 350px;
+  position: absolute;
+  top: 60%;
+  left: 5%;
+  z-index: -1;
+  animation: floating infinite 10s forwards ease;
+}
+
+@media (min-width: 768px) {
+  .float-person {
+    width: 100%;
+    max-width: 380px;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    z-index: -1;
+  }
+}
+
 html {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+body {
+  background: radial-gradient(#BF7AB4, #7D4EBF);
+  position: relative;
 }
 
 li {
