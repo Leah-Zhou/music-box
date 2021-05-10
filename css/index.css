@@ -1,0 +1,56 @@
+html {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  .side-bar {
+    height: 100vh;
+  }
+}
+
+.search-area {
+  background-color: pink;
+}
+
+.search-form {
+  min-width: 300px;
+  max-width: 800px;
+}
+
+@media (min-width: 320px) {
+  .search-form {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 768px) {
+  .search-form {
+    flex-direction: row;
+  }
+}
+
+.song-item {
+  width: 250px;
+}
+
+.song-item img {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.fa-heart {
+  color: gray;
+}
+
+.favour {
+  background-color: pink;
+}
+/*# sourceMappingURL=index.css.map */
