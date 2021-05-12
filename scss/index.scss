@@ -1,7 +1,9 @@
 @import "_global";
-@import "_form";
+@import "_search";
 @import "colors";
+@import "_signup.scss";
 @import "_imgs";
+@import "_nav.scss";
 
 html{
   box-sizing: border-box;
@@ -13,41 +15,38 @@ body{
   // background-color: rgba($primary, 0.5);
   position: relative;
 }
+ul{
+  padding: 0;
+  margin:0;
+}
 li{
   list-style:none;
 }
-.side-bar{
-  @include breakpoint("desktop"){
-    height:100vh;
+.bg-color{
+  background:white;
+}
+
+.main-content{
+  margin-top: 60px;
+  align-items: center;
+  @include breakpoint('tablet'){
+    margin-left: 150px;
+  }
+  @include breakpoint('desktop'){
+    margin-left: 200px;
   }
 }
-.search-area{
-  background-color: blue;
+.card-style{
+  border-radius:20px;
+  background-color:white;
+  box-shadow: 3px 8px 16px rgba(gray, 0.2);
+  margin:1.2em;
+
 }
-.search-form{
-  min-width: 300px;
-  max-width: 800px;
-  @include breakpoint("mobile"){
-    flex-direction: column;
-  }
-  @include breakpoint("desktop"){
-    flex-direction: row;
-  }
-}
-.song-item{
-  width:250px;
-  img{
-    width: 150px;
-    height: 150px;
-    margin:0 auto;
-    border-radius: 10px;
-  }
-}
-.fa-heart{
-  color:gray;
-}
-.favour{
-  background-color: pink;
+.bg-light{
+  margin:0.5em;
+  background:linear-gradient($primary, $darkPurple)!important;
+  color:white;
 }
 // .soild-heart{
 

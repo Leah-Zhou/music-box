@@ -1,0 +1,88 @@
+@import "_global";
+
+$albumSize: 180px;
+$albumRadius: 20px;
+
+.greeting{
+ color:$darkPurple;
+}
+// search music form
+.side-bar{
+  align-items: flex-start;
+  @include breakpoint("desktop"){
+    height:100vh;
+  }
+}
+.search-form{
+  min-width: 300px;
+  max-width: 800px;
+  margin: 2em;
+  color:$darkPurple;
+  &>input[name="songInfo"]{
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    border:none;
+    width: 100%;
+    @include breakpoint('tablet'){
+      width: 600px;
+    }
+  }
+}
+.song-list{
+  height: 0;
+  margin: 0 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+}
+.song-item{
+  width:180px;
+  img{
+    width: $albumSize;
+    height: $albumSize;
+    margin:0 auto;
+    border-top-left-radius:$albumRadius;
+    border-top-right-radius:$albumRadius;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+}
+.song-name{
+  font-size: clamp(14px, 2vw, 15px);
+}
+.song-artist{
+  font-size:0.7em !important;
+}
+.album{
+  position: relative;
+  &>i{
+    opacity: 0.8;
+    z-index:3;
+    display: none;
+    position: absolute;
+    top:43%;
+    left:45%;
+  }
+}
+.album:hover >.play{
+  display: block;
+}
+.album-top{
+  width: $albumSize;
+  height: $albumSize;
+  margin:0 auto;
+  border-top-left-radius:$albumRadius;
+  border-top-right-radius:$albumRadius;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  background-color: rgba($primary, 0.7);
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top:4px;
+  left:0%;
+}
+
+

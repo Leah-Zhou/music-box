@@ -1,0 +1,24 @@
+@import "_global";
+
+.navbar-nav{
+  cursor: pointer;
+  @include breakpoint("tablet"){
+    padding-left:1.2em;
+  }
+  &>i{
+    margin:0.3em 0.6em;
+    color:salmon;
+  }
+}
+#navbarExpand{
+  height: 100vh;
+  overflow: hidden;
+  align-items: flex-start;
+  // margin-left:2em;
+  &>li{
+    @include breakpoint('mobile'){
+    align-items: center;
+    margin: 2em;
+    }
+  }
+}
