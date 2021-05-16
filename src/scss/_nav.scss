@@ -1,24 +1,35 @@
 @import "_global";
 
 .navbar-nav{
-  cursor: pointer;
-  @include breakpoint("tablet"){
-    padding-left:1.2em;
-  }
-  &>i{
-    margin:0.3em 0.6em;
-    color:salmon;
+  cursor: pointer; 
+  .btn{
+    color:white !important;
   }
 }
-#navbarExpand{
-  height: 100vh;
-  overflow: hidden;
-  align-items: flex-start;
-  // margin-left:2em;
-  &>li{
-    @include breakpoint('mobile'){
-    align-items: center;
-    margin: 2em;
-    }
+.logo>img{
+  width: 30px;
+  margin-right: auto;
+}
+.account{
+  margin-left: auto !important;
+  position: relative;
+  margin-right:1em;
+}
+.dropdown-menu{
+ left:-20px !important;
+ background-color: $primary;
+ border: none !important;
+}
+.dropdown-item{
+  color:white !important;
+  display: flex;
+  align-items: baseline;
+  &:hover{
+    background-color: $darkPurple !important;
   }
+}
+.nav-bg{
+  background-color:$primary;
+  color:white;
+  padding: 0.5em;
 }

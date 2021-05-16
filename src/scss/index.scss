@@ -29,12 +29,6 @@ li{
 .main-content{
   margin-top: 60px;
   align-items: center;
-  @include breakpoint('tablet'){
-    margin-left: 150px;
-  }
-  @include breakpoint('desktop'){
-    margin-left: 200px;
-  }
 }
 .card-style{
   border-radius:20px;
@@ -43,11 +37,3 @@ li{
   margin:1.2em;
 
 }
-.bg-light{
-  margin:0.5em;
-  background:linear-gradient($primary, $darkPurple)!important;
-  color:white;
-}
-// .soild-heart{
-
-// }

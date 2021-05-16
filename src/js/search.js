@@ -1,5 +1,5 @@
-// const songList =document.querySelector('.song-list');
-
+const songList =document.querySelector('.song-list');
+const searchForm=document.querySelector('.search-form');
 const allSong=[];
 const favour =document.querySelectorAll('.favour');
 let fav=false;
@@ -54,49 +54,54 @@ import mykey from './mykey';
 }
 
 // submit search to call asyn data
-searchForm.addEventListener('submit', e=>{
-  e.preventDefault();
-  const searchInput =searchForm.songInfo.value.trim().toLowerCase(); 
-  if(searchInput){
-    cleanList();
-    console.log(searchInput)
-    getData(searchInput).then((data)=>{
-      printAllData(data);
-    }).catch(err=>{console.log(err)});
-  }
-  searchForm.reset();
-})
+function searchMusic(){
+    searchForm.addEventListener('submit', e=>{
+    e.preventDefault();
+    const searchInput =searchForm.songInfo.value.trim().toLowerCase(); 
+    if(searchInput){
+      cleanList();
+      console.log(searchInput)
+      getData(searchInput).then((data)=>{
+        printAllData(data);
+      }).catch(err=>{console.log(err)});
+    }
+    searchForm.reset();
+  })
+} 
 
 // control playlist
- songList.addEventListener('click', e=>{
-   const target =e.target;
-  if(target.classList.contains('fa-heart')){
-    if(fav){
-      fav=!fav;
-      console.log(fav);
-      target.classList.remove("fas")
-      target.classList.add("far");
-    }else{
-      fav=!fav;
-      console.log(fav);
-      target.classList.add("fas")
-      target.classList.remove("far");
-    }
-  }
-  else if(target.classList.contains('play-btn')){
-    isSongPlay=!isSongPlay;
-    let songId=target.getAttribute('data-id');
-    let playSong=document.getElementById(songId);
-    if(isSongPlay){
-      playSong.play();
-      target.classList.remove('fa-play');
-      target.classList.add('fa-pause');
-    }else{
-      playSong.pause();
-      target.classList.remove('fa-pause');
-      target.classList.add('fa-play');
-    }   
-  }
-})
+ function controlMusic(){
+  songList.addEventListener('click', e=>{
+    const target =e.target;
+   if(target.classList.contains('fa-heart')){
+     if(fav){
+       fav=!fav;
+       console.log(fav);
+       target.classList.remove("fas")
+       target.classList.add("far");
+     }else{
+       fav=!fav;
+       console.log(fav);
+       target.classList.add("fas")
+       target.classList.remove("far");
+     }
+   }
+   else if(target.classList.contains('play-btn')){
+     isSongPlay=!isSongPlay;
+     let songId=target.getAttribute('data-id');
+     let playSong=document.getElementById(songId);
+     if(isSongPlay){
+       playSong.play();
+       target.classList.remove('fa-play');
+       target.classList.add('fa-pause');
+     }else{
+       playSong.pause();
+       target.classList.remove('fa-pause');
+       target.classList.add('fa-play');
+     }   
+   }
+ })
+ }
 
 
+export {searchMusic, controlMusic};
