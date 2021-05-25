@@ -1,0 +1,33 @@
+@import "_variable";
+
+html{
+  box-sizing: border-box;
+  padding: 0;
+  margin:0;
+}
+body{
+  background: radial-gradient($primary, $darkPurple);
+  // background-color: rgba($primary, 0.5);
+  position: relative;
+}
+ul{
+  padding: 0;
+  margin:0;
+}
+li{
+  list-style:none;
+}
+.bg-color{
+  background:white;
+}
+
+.main-content{
+  margin-top: 60px;
+  align-items: center;
+}
+.card-style{
+  border-radius:20px;
+  background-color:white;
+  box-shadow: 3px 8px 16px rgba(gray, 0.2);
+  margin:1.2em;
+}

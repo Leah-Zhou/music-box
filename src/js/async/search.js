@@ -5,7 +5,7 @@ const favour =document.querySelectorAll('.favour');
 let fav=false;
 let isSongPlay=false;
 
-import mykey from './mykey';
+import mykey from '../privacy/mykey';
 
 // list template
  function printOneData(list){
@@ -72,32 +72,31 @@ function searchMusic(){
 // control playlist
  function controlMusic(){
   songList.addEventListener('click', e=>{
-    const target =e.target;
-   if(target.classList.contains('fa-heart')){
+   if(e.target.classList.contains('fa-heart')){
      if(fav){
        fav=!fav;
        console.log(fav);
-       target.classList.remove("fas")
-       target.classList.add("far");
+       e.target.classList.remove("fas")
+       e.target.classList.add("far");
      }else{
        fav=!fav;
        console.log(fav);
-       target.classList.add("fas")
-       target.classList.remove("far");
+       e.target.classList.add("fas")
+       e.target.classList.remove("far");
      }
    }
-   else if(target.classList.contains('play-btn')){
+   else if(e.target.classList.contains('play-btn')){
      isSongPlay=!isSongPlay;
-     let songId=target.getAttribute('data-id');
+     let songId=e.target.getAttribute('data-id');
      let playSong=document.getElementById(songId);
      if(isSongPlay){
        playSong.play();
-       target.classList.remove('fa-play');
-       target.classList.add('fa-pause');
+       e.target.classList.remove('fa-play');
+       e.target.classList.add('fa-pause');
      }else{
        playSong.pause();
-       target.classList.remove('fa-pause');
-       target.classList.add('fa-play');
+        e.target.classList.remove('fa-pause');
+       e.target.classList.add('fa-play');
      }   
    }
  })

@@ -1,3 +1,40 @@
+
+
+
+// const path = require('path');
+
+// module.exports = {
+//   entry: './src/js/index.js',
+//   output: {
+//     path: path.resolve(__dirname, 'dist/assets'),
+//     filename: 'bundle.js', 
+//   },
+//   devServer: {
+//     contentBase: path.resolve(__dirname, 'dist'),
+//     publicPath: '/assets/',
+//     open:true
+//   },
+//   module: {
+//     rules: [{
+//       test: /\.js$/,
+//       exclude: /node_modules/,
+//       use: {
+//         loader: 'babel-loader',
+//         options: {
+//           presets: ['@babel/preset-env']
+//         }
+//       }
+//     },
+//     {
+//       test:/\.s[ac]ss$/i,
+//       use:['style-loader', 'css-loader', 'sass-loader'],
+//     }
+//   ]
+//   }
+// };
+
+
+
 const path = require('path');
 
 module.exports={
@@ -6,6 +43,7 @@ module.exports={
     path: path.resolve(__dirname, 'dist/assets'),
     filename: 'bundle.js'
   },
+  devtool: 'source-map',
   module:{
     rules:[
       {
@@ -14,11 +52,7 @@ module.exports={
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env',
-            {
-              "targets": "> 0.25%, not dead"
-            }
-          ]
+            presets: ['@babel/preset-env']
           }
         }
       },
@@ -29,9 +63,10 @@ module.exports={
   ],
   },
   devServer:{
-    contentBase:path.resolve(__dirname, 'dist'),
+    contentBase:'dist',
     port:3000,
     open:true,
     publicPath: '/assets/',
+
   }
 };

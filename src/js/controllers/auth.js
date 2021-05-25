@@ -1,15 +1,16 @@
 
-const signOut =document.querySelector('.sign-out');
-const signInForm=document.querySelector('.form-signin');
-const registerForm=document.querySelector('.form-register');
 
-const regExPattern={
-   username:/^[a-z]+$/i,
-   password:/[\w]{6,}/,
-   email:/^([\w]+)+@([a-z0-9]+)\.([a-z]{2,8})$/,
-}
+
+
+
+// const regExPattern={
+//    username:/^[a-z]+$/i,
+//    password:/[\w]{6,}/,
+//    email:/^([\w]+)+@([a-z0-9]+)\.([a-z]{2,8})$/,
+// }
 class LogInUser{
   signInUser(){
+    const signInForm=document.querySelector('.form-signin');
     signInForm.addEventListener('submit', e=>{
       e.preventDefault();
       const email=signInForm['signIn-email'].value;
@@ -20,6 +21,7 @@ class LogInUser{
   });
   }
   signOutUser(){
+    const signOut =document.querySelector('.sign-out');
     signOut.addEventListener('click', ()=>{
       auth.signOut();
     })
@@ -28,6 +30,7 @@ class LogInUser{
 
 class CreateUser{
   signUpUser(){
+    const registerForm=document.querySelector('.form-register');
     registerForm.addEventListener('submit', e=>{
       e.preventDefault();
       const email =registerForm['register-email'].value;

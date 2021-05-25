@@ -1,6 +1,3 @@
-@import "_colors";
-
-
 @mixin breakpoint($screenSize) {
   @if($screenSize=="mobile"){
     @media(min-width:"320px") and (max-width:"767px"){
