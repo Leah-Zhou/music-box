@@ -30,23 +30,23 @@ export default class Home{
           </div>
           <div>
             <input type="password" id="signIn-password" class="form-control mt-4" placeholder="password" required>
-            <p class="signin-hint">The password or email is invaild</p>
+            <p class="signin-hint"></p>
           </div>
           <button class="btn btn-secondary px-5">Sign In</button>
         </form>
 
         <form class="form-register">
           <div>
-            <input type="text"  id="register-username"class="form-control mt-4" placeholder="username" required>
-            <p class="name-hint">Letter character only</p>
+            <input type="text"  id="register-username" name="username" class="form-control mt-4" placeholder="username" required>
+            <p class="name-hint">Maximun 10 characters</p>
           </div>
           <div>
-            <input type="email" id="register-email" class="form-control mt-4" placeholder="email" required>
+            <input type="email" id="register-email" name="email" class="form-control mt-4" placeholder="email" required>
             <p class="register-email-hint">Please use vaild email address</p>
           </div>
           <div>
-            <input type="password" id="register-password" class="form-control mt-4" placeholder="password" required>
-            <p class="register-pw-hint">The password needs at least 6 characters</p>
+            <input type="password" id="register-password" name="password" class="form-control mt-4" placeholder="password" required>
+            <p class="register-pw-hint">Minimun 6 characters</p>
           </div>
           <button class="btn btn-secondary px-5">SignUp</button>
         </form>

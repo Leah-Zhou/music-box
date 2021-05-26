@@ -30,16 +30,26 @@
   margin-left: 0%;
   &>form{
     width:320px;
-    padding:30px
+    padding:30px;
   }
-  p{
+   p{
     color:$secondary;
     font-size: 13px;
     padding-top:0.2em;
     padding-left:0.2em;
+    opacity: 0;
+    height:auto;
+    transition: all 0.2s ease-out;
   }
 }
-
+.form-signin{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  input{
+    margin:0.8em 0;
+  }
+}
 .form-slider{
   position: relative;
   width: 320px;
@@ -84,5 +94,8 @@
 }
 .btn-secondary:hover{
   background-color: $primary;
+}
+.btn-secondary:focus{
+  background-color: $secondary;
 }
 

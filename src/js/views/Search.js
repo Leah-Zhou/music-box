@@ -37,7 +37,7 @@ export default class Search  {
    
       <section class="main-content d-flex flex-column justify-content-center">
        <section class="navbar-nav py-3 greeting">
-         <h2>Welcome<span>&#44;</span><span id="username"></span></h2>
+         <h2>Welcome<span>&#44;</span><span id="current-user"></span></h2>
        </section>
        <section class="px-2">
          <form class="search-form d-block">

@@ -1,24 +1,19 @@
 
 import '../scss/index.scss';
 import 'regenerator-runtime/runtime';
-import loadContent from './controllers/route.js';
-import {loginCtrl, signupCtrl}from './controllers/formSwitcher.js';
+// import loadContent from './controllers/route.js';
+// import {loginCtrl, signupCtrl}from './controllers/formSwitcher.js';
+import {checkAuth}from './controllers/auth.js';
 
 
 // invoke router
-loadContent();
- window.addEventListener('hashchange', ()=>{
-    loadContent()
-})
-
-// invioke form switcher
-window.addEventListener('DOMContentLoaded', ()=>{
-  loginCtrl();
-  signupCtrl();
-})
+checkAuth;
 
 
-// import {LogInUser, CreateUser} from './auth';
+
+
+
+
 
 // import {searchMusic, controlMusic} from './search.js';
 
@@ -31,23 +26,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 // const loginUser=document.getElementById('#username')
 
 
-// // check if user sign in or not
-// auth.onAuthStateChanged(
-//   (user)=>{
-//     if(user){
-//       console.log(user)
-//       appPage.classList.remove('d-none');
-//       homePage.classList.add('d-none');
-//       body.classList.add('bg-color');
-//       // loginUser=user
-//     }else{
-//       console.log('no user')
-//       appPage.classList.add('d-none');
-//       homePage.classList.remove('d-none');
-//       body.classList.remove('bg-color');
-//     }
-//   }
-// )
+
 
 
 
