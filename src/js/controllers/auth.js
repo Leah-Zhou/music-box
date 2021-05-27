@@ -1,26 +1,26 @@
 
 import loadContent from './route.js';
-import {storeUserName} from './data.js';
+import {storeUserName, getUserInfo} from './data.js';
 
 // check validation of registation
 const regExPattern={
-   username:/^[\w]{1, 10}$/i,
+   username:/^([\w]{1,10})$/,
    password:/[\w]{6,}/,
-   email:/^([\w]+)+@([a-z0-9]+)\.([a-z]{2,20})$/,
+   email:/^([\s\S]+)+@([a-z0-9]+)\.([a-z]{2,28})$/,
 }
 
 const checkValidation=(target, pattern)=>{
   if(pattern.test(target.value)){
-     target.nextElementSibling.style.opacity='0';
+     target.nextElementSibling.style.opacity="0"
   }else{
-    target.nextElementSibling.style.opacity='1';
+    target.nextElementSibling.style.opacity="1"
   }
 }
 // signIn function 
 async function signInUser(){
   const signInForm=document.querySelector('.form-signin');
   const reminder=signInForm.querySelector('.signin-hint');
-  // const userName =document.getElementById('#current-user');
+
   signInForm.addEventListener('submit', e=>{
     e.preventDefault();
     const email=signInForm['signIn-email'].value;
@@ -30,7 +30,6 @@ async function signInUser(){
     }).catch(err=>{
       reminder.textContent=err.message;
       reminder.style.opacity='1';
-      console.log(err.message)
     });
 });
 }
@@ -59,14 +58,22 @@ async function signUpUser(){
   })
 }
 
+// sign out user 
+async function signOutUser(){
+  const signOut =document.querySelector('.sign-out');
+  signOut.addEventListener('click', ()=>{
+    auth.signOut();
+  })
+}
+
 // check authentication
 const body=document.querySelector('body');
 const checkAuth = auth.onAuthStateChanged(
   (user)=>{
     if(user){
-      console.log(user.uid);
       location.hash="#search"; 
       loadContent(); 
+      getUserInfo(user.uid);
       body.classList.add('bg-color');
     }else{
       console.log('no user');
@@ -76,12 +83,5 @@ const checkAuth = auth.onAuthStateChanged(
     }
   }
 )
-// sign out user 
-async function signOutUser(){
-  const signOut =document.querySelector('.sign-out');
-  signOut.addEventListener('click', ()=>{
-    auth.signOut();
-  })
-}
 
 export {signInUser, signUpUser, signOutUser, checkAuth};

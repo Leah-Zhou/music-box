@@ -38,7 +38,7 @@
     padding-top:0.2em;
     padding-left:0.2em;
     opacity: 0;
-    height:auto;
+    height:0;
     transition: all 0.2s ease-out;
   }
 }
@@ -48,6 +48,9 @@
   justify-content: center;
   input{
     margin:0.8em 0;
+  }
+  button{
+    margin-top:50px;
   }
 }
 .form-slider{

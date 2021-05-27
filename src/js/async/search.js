@@ -1,14 +1,15 @@
-const songList =document.querySelector('.song-list');
-const searchForm=document.querySelector('.search-form');
+
+
 const allSong=[];
 const favour =document.querySelectorAll('.favour');
 let fav=false;
 let isSongPlay=false;
 
-import mykey from '../privacy/mykey';
+// import mykey from '../privacy/mykey';
 
 // list template
  function printOneData(list){
+  const songList =document.querySelector('.song-list');
   songList.innerHTML+=`
   <li class="song-item text-center d-flex flex-column align-items-center justify-content-around position-relative card-style">
     <audio controls style="display:none" id="${list.id}">
@@ -42,19 +43,20 @@ import mykey from '../privacy/mykey';
   })
 }
 // asyn API
- const getData=async(searchInput)=>{   
-  const searchKey=searchInput
-  const request= await fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${searchKey}`, {
-    "method": "GET",
-    "headers": mykey
-  })
-  const data= await request.json();
-  console.log(data.data);
-   return data.data;
-}
+//  const getData=async(searchInput)=>{   
+//   const searchKey=searchInput
+//   const request= await fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${searchKey}`, {
+//     "method": "GET",
+//     "headers": mykey
+//   })
+//   const data= await request.json();
+//   console.log(data.data);
+//    return data.data;
+// }
 
 // submit search to call asyn data
 function searchMusic(){
+  const searchForm=document.querySelector('.search-form');
     searchForm.addEventListener('submit', e=>{
     e.preventDefault();
     const searchInput =searchForm.songInfo.value.trim().toLowerCase(); 

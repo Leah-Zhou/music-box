@@ -1,8 +1,9 @@
-
+import {loginCtrl, signupCtrl}from '../controllers/formSwitcher.js';
+import {signInUser, signUpUser}from '../controllers/auth.js';
 
 export default class Home{
   constructor(title){
-    document.title=this.title
+    document.title=title
   }
    async getHtml(){
     return `
@@ -37,8 +38,8 @@ export default class Home{
 
         <form class="form-register">
           <div>
-            <input type="text"  id="register-username" name="username" class="form-control mt-4" placeholder="username" required>
-            <p class="name-hint">Maximun 10 characters</p>
+            <input type="text" id="register-username" name="username" class="form-control mt-4" placeholder="username" required>
+            <p class="name-hint">Maximun 10 characters, no symbols and space</p>
           </div>
           <div>
             <input type="email" id="register-email" name="email" class="form-control mt-4" placeholder="email" required>
@@ -54,5 +55,13 @@ export default class Home{
     </section>
     </div>
     `
+  }
+
+  
+  async initControllers(){
+    loginCtrl();
+    signupCtrl();
+    signInUser();
+    signUpUser();
   }
 }

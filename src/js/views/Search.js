@@ -1,7 +1,8 @@
-
+import { signOutUser } from "../controllers/auth";
+import {searchMusic} from '../controllers/data';
 export default class Search  {
   constructor(title){
-    document.title=this.title
+    document.title=title
   }
   async getHtml(){
    return `
@@ -37,7 +38,7 @@ export default class Search  {
    
       <section class="main-content d-flex flex-column justify-content-center">
        <section class="navbar-nav py-3 greeting">
-         <h2>Welcome<span>&#44;</span><span id="current-user"></span></h2>
+         <h2>Welcome<span>&#44;</span><span class="current-user"></span></h2>
        </section>
        <section class="px-2">
          <form class="search-form d-block">
@@ -50,6 +51,10 @@ export default class Search  {
        </ul>
       </section>
  </div>
-   `
- }
+   `}
+
+   async initControllers(){
+     signOutUser();
+     searchMusic()
+   }
 }
