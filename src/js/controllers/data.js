@@ -25,12 +25,9 @@ async function cleanList(){
   songList.innerHTML='';
 }
 
-
 async function printAllData(allData){
   let songs =new SongList();
   allData.forEach(list=>{
-    const songList =document.querySelector('.song-list');
-    console.log(songList);
     songs.getHtml(list)
   })
 }
@@ -51,27 +48,43 @@ async function printAllData(allData){
   })
 } 
 
-export {storeUserName,getUserInfo, searchMusic}
 
-// function printOneData(list){
-//   const songList =document.querySelector('.song-list');
-//   songList.innerHTML+=`
-//   <li class="song-item text-center d-flex flex-column align-items-center justify-content-around position-relative card-style">
-//     <audio controls style="display:none" id="${list.id}">
-//       <source src=${list.preview} type="audio/ogg">
-//     </audio>
-//     <div class="album">
-//       <img src=${list.album.cover_medium} alt="cover of ${list.title}" class="cover my-1">
-//       <div class="album-top play"  data-id="${list.id}">
-//       </div>
-//       <i class="fas fa-play fa-2x play play-btn" data-id="${list.id}"></i>
-//     </div>
-//      <div>
-//       <p class="song-name my-1">${list.title}
-//        <span class="song-artist text-muted fs-6 fw-lighter px-1">${list.artist.name}
-//        </span>
-//       </p>
-//       <i class="far fa-heart"></i>
-//     </div>
-//    </li> `
-// }
+
+async function controlMusic(){
+  const songList =document.querySelector('.song-list');
+  let fav=false;
+  let isSongPlay=false;
+
+  songList.addEventListener('click', e=>{
+   if(e.target.classList.contains('fa-heart')){
+     if(fav){
+       fav=!fav;
+       console.log(fav);
+       e.target.classList.remove("fas")
+       e.target.classList.add("far");
+     }else{
+       fav=!fav;
+       console.log(fav);
+       e.target.classList.add("fas")
+       e.target.classList.remove("far");
+     }
+   }
+   else if(e.target.classList.contains('play-btn')){
+     isSongPlay=!isSongPlay;
+     let songId=e.target.getAttribute('data-id');
+     let playSong=document.getElementById(songId);
+     if(isSongPlay){
+       playSong.play();
+       e.target.classList.remove('fa-play');
+       e.target.classList.add('fa-pause');
+     }else{
+       playSong.pause();
+        e.target.classList.remove('fa-pause');
+        e.target.classList.add('fa-play');
+     }   
+   }
+ })
+ }
+
+export {storeUserName,getUserInfo, searchMusic, controlMusic}
+

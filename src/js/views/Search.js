@@ -1,5 +1,5 @@
 import { signOutUser } from "../controllers/auth";
-import {searchMusic} from '../controllers/data';
+import {searchMusic, controlMusic} from '../controllers/data';
 export default class Search  {
   constructor(title){
     document.title=title
@@ -55,6 +55,7 @@ export default class Search  {
 
    async initControllers(){
      signOutUser();
-     searchMusic()
+     searchMusic();
+     controlMusic();
    }
 }
