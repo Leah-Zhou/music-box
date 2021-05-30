@@ -8,20 +8,27 @@ const Nav =
       <div class="menu-icon">
         <i class="fas fa-ellipsis-v px-3"></i>
       </div>
-  </nav>
-    
+  </nav>   
   <ul class="navbar-nav">
-    <li class="fav-section">
+    <li class="nav-fav"> 
+      <input type="radio" name="nav-opt" id="nav-fav" checked />
+      <label for="nav-fav"> 
       <i class="fas fa-heart px-2"></i>
-      <p>My Fav</p>
+      Explore Music</label>
     </li>
-    <li>
+    <li  class="nav-account">
+      <input type="radio" name="nav-opt" id="nav-account"/>
+      <label for="nav-account">
       <i class="fas fa-user px-2"></i>
-      <p>Account Setting</p>
+      Account Setting
+      </label>
     </li>
     <li class="sign-out">
-    <i class="fas fa-power-off px-2"></i>
-    <p>Sign Out</p>
+     <input type="radio" name="nav-opt"/>
+      <label for="nav-signout">
+      <i class="fas fa-power-off px-2"></i>
+      Sign Out
+      </label>
   </li>
   </ul>
 </section>`

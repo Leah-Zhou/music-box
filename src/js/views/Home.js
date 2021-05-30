@@ -18,8 +18,8 @@ export default class Home{
       </div>
       <section class="d-grid form-wrap">
       <div class="form-slider">
-        <input type="radio" name="slide" id="login" checked>
-        <input type="radio" name="slide" id="signup">
+        <input type="radio" name="slide" id="login" checked />
+        <input type="radio" name="slide" id="signup" />
         <label for="login" class="slide login">LogIn</label>
         <label for="signup" class="slide signup">SignUp</label>
         <div class="slider"></div>

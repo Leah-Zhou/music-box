@@ -3,7 +3,8 @@
 
 
 .greeting{
- color:$darkPurple;
+  margin-top:80px;
+  color:$darkPurple;
 }
 // search music form
 .side-bar{
@@ -37,11 +38,14 @@
 
 }
 .song-item{
-  width:$albumSize;
-  height:$albumHeight;
+  width: $albumWidthS;
+  height: $albumHeightS;
+  @include breakpoint('tablet'){
+    height:$albumHeightL;
+    width: $albumWidthL;
+  }
   img{
-    width: $albumSize;
-    height: $albumSize;
+    @include albumSize($albumWidthS, $albumWidthL);
     margin:0 auto;
     border-top-left-radius:$albumRadius;
     border-top-right-radius:$albumRadius;
@@ -71,8 +75,7 @@
   display: block;
 }
 .album-top{
-  width: $albumSize;
-  height: $albumSize;
+  @include albumSize($albumWidthS, $albumWidthL);
   margin:0 auto;
   border-top-left-radius:$albumRadius;
   border-top-right-radius:$albumRadius;

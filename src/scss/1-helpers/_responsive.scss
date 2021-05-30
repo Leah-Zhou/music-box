@@ -16,3 +16,16 @@
   }
 }
 
+
+
+@mixin albumSize($sizeS, $sizeL){
+  @include breakpoint('mobile'){
+    width:$sizeS;
+    height:$sizeS;
+  }
+  @include breakpoint('tablet'){
+    width:$sizeL;
+    height:$sizeL;
+  }
+}
+
