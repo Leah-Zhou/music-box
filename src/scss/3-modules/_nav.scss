@@ -3,6 +3,26 @@
 
 .navbar-nav{
   cursor: pointer; 
+  background-color:rgba($primary, 0.8);
+  backdrop-filter: blur(5px);
+  padding-top:5em;
+  padding-left: 0.6em;
+  position: fixed;
+  top:0;
+  left:-250px;
+  height: 100vh;
+  width:250px;
+  transition:left .3s ease-in;
+  li{
+    color:white;  
+    display: grid;
+    grid-template-columns:15% auto;
+    align-items: baseline;
+    padding:1em;
+  }
+  &>i{
+    display: inline;
+  }
   .btn{
     color:white !important;
   }
@@ -11,23 +31,12 @@
   width: 30px;
   margin-right: auto;
 }
-.account{
-  margin-left: auto !important;
-  position: relative;
-  margin-right:1em;
-}
-.dropdown-menu{
- left:-20px !important;
- background-color: $primary;
- border: none !important;
-}
-.dropdown-item{
-  color:white !important;
-  display: flex;
-  align-items: baseline;
-  &:hover{
-    background-color: $darkPurple !important;
-  }
+.expanded{
+ left:0px;
+ @include breakpoint('desktop'){
+  top:0;
+  left:0vw;
+ }
 }
 .nav-bg{
   background-color:$primary;

@@ -1,6 +1,6 @@
 
 import loadContent from './route.js';
-import {storeUserName, getUserInfo} from './data.js';
+import {storeUserName, getUserInfo} from './useData.js';
 
 // check validation of registation
 const regExPattern={

@@ -2,7 +2,6 @@
 @import "../2-base/base";
 
 
-
 .greeting{
  color:$darkPurple;
 }
@@ -34,11 +33,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items:flex-start;
 
 }
 .song-item{
-  width:180px;
+  width:$albumSize;
+  height:$albumHeight;
   img{
     width: $albumSize;
     height: $albumSize;
@@ -54,6 +54,7 @@
 }
 .song-artist{
   font-size:0.7em !important;
+  margin:0;
 }
 .album{
   position: relative;
@@ -85,4 +86,7 @@
   left:0%;
 }
 
+.song-artist + .fa-heart{
+  color:rgba($primary, 0.7);
+}
 

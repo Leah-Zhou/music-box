@@ -1,26 +1,25 @@
-import Home from '../views/Home.js';
-import Search from '../views/Search.js';
-// import {loginCtrl, signupCtrl}from './formSwitcher.js';
-// import {signInUser, signUpUser, signOutUser}from './auth.js';
-// import {getUserInfo} from './data.js';
+import Home from '../views/Home';
+import Search from '../views/Search';
+
 
 
 async function getContent(hashId){
   const body=document.querySelector('body');
   const homePage =new Home('home');
   const searchPage =new Search('search');
+
   
   const contentViews={
     home: await homePage.getHtml(),
     search: await searchPage.getHtml(),
   }
-
+   
   switch (hashId){
     case 'home':
       body.innerHTML=contentViews[hashId];
       await homePage.initControllers();
       break;
-
+    
     case 'search':
       body.innerHTML=contentViews[hashId]; 
       await searchPage.initControllers();

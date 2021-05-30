@@ -20,9 +20,8 @@ li{
 .bg-color{
   background:white;
 }
-
 .main-content{
-  margin-top: 60px;
+  // margin-top: 60px;
   align-items: center;
 }
 .card-style{
@@ -30,4 +29,9 @@ li{
   background-color:white;
   box-shadow: 3px 8px 16px rgba(gray, 0.2);
   margin:1.2em;
+}
+%centerItem{
+  display: grid;
+  justify-items: center;
+  align-items: center;
 }
