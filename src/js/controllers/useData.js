@@ -27,11 +27,22 @@ async function cleanList(){
 
 async function printAllData(allData){
   const musicList =document.querySelector('.song-list');
-  console.log(musicList)
   let songs =new SongList();
-  allData.forEach(list=>{
-    songs.getHtml(musicList, list);
-  })
+  let i=0;
+  let chunk=6;
+  for(i=0; i<allData.length; i+=chunk){
+    const dataGroup= allData.slice(i, i+chunk);
+     console.log(dataGroup);
+     let ul =document.createElement('ul');
+     ul.className="carousel-item row";
+    dataGroup.forEach(group=>{
+       let print= songs.getHtml(group);
+       ul.innerHTML+=print;
+    });   
+    musicList.appendChild(ul);
+    musicList.firstChild.classList.add('active');
+    document.querySelectorAll('.carousel-btn').forEach(btn=>btn.style.display="block")
+  }
 }
 
  async function searchMusic(){
@@ -108,12 +119,12 @@ async function controlMusic(){
 
      if(isSongPlay){
        playSong.play();
-       e.target.classList.remove('fa-play');
+       e.target.classList.remove('fa-play-circle');
        e.target.classList.add('fa-pause');
      }else{
        playSong.pause();
         e.target.classList.remove('fa-pause');
-        e.target.classList.add('fa-play');
+        e.target.classList.add('fa-play-circle');
      }   
    }
  })

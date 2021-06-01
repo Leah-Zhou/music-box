@@ -29,36 +29,66 @@
   }
 }
 .song-list{
-  height: 0;
-  margin: 0 30px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items:flex-start;
-
+  padding: 0 30px 0 40px;
+  width: 100vw;
+  @include breakpoint('desktop'){
+    width: 80vw;
+  }
 }
 .song-item{
   width: $albumWidthS;
   height: $albumHeightS;
-  @include breakpoint('tablet'){
+  margin:0.8em;
+  @include breakpoint('desktop'){
     height:$albumHeightL;
     width: $albumWidthL;
+    margin:1.2em;
   }
   img{
-    @include albumSize($albumWidthS, $albumWidthL);
-    margin:0 auto;
-    border-top-left-radius:$albumRadius;
-    border-top-right-radius:$albumRadius;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
+    width:80%;
+    height: 80%;
+    object-fit: cover;
+    @include breakpoint('desktop'){
+      @include albumSize($albumWidthS, $albumWidthL);
+      margin:0 auto;
+      border-top-left-radius:$albumRadius;
+      border-top-right-radius:$albumRadius;
+      border-bottom-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+    }
   }
+}
+
+.card-style{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // justify-items: center;
+  align-items: center;
+  background-color: white;
+  border-radius:20px;
+  box-shadow: 3px 8px 16px rgba(gray, 0.2);
+ @include breakpoint("desktop"){
+   margin:15px;
+   grid-template-columns: 1fr;
+   grid-template-rows: 1fr 1fr;
+ }
+}
+%truncate{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .song-name{
   font-size: clamp(14px, 2vw, 15px);
+  @extend %truncate;
 }
 .song-artist{
   font-size:0.7em !important;
   margin:0;
+  @extend %truncate;
+}
+.row>*{
+  padding-left:0 !important;
 }
 .album{
   position: relative;
@@ -67,27 +97,28 @@
     z-index:3;
     display: none;
     position: absolute;
-    top:43%;
-    left:45%;
+    top:40%;
+    left:40%;
   }
 }
-.album:hover >.play{
+.album>.play{
   display: block;
+  color: rgba($primary, 0.7);
 }
-.album-top{
-  @include albumSize($albumWidthS, $albumWidthL);
-  margin:0 auto;
-  border-top-left-radius:$albumRadius;
-  border-top-right-radius:$albumRadius;
-  border-bottom-right-radius: 0px;
-  border-bottom-left-radius: 0px;
-  background-color: rgba($primary, 0.7);
-  display: none;
-  position: absolute;
-  z-index: 2;
-  top:4px;
-  left:0%;
-}
+// .album-top{
+//   // @include albumSize($albumWidthS, $albumWidthL);
+//   // margin:0 auto;
+//   // border-top-left-radius:$albumRadius;
+//   // border-top-right-radius:$albumRadius;
+//   // border-bottom-right-radius: 0px;
+//   // border-bottom-left-radius: 0px;
+//   // background-color: rgba($primary, 0.7);
+//   // display: none;
+//   position: absolute;
+//   z-index: 3;
+//   top:4px;
+//   left:0;
+// }
 
 .song-artist + .fa-heart{
   color:rgba($primary, 0.7);

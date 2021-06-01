@@ -1,6 +1,6 @@
 @import "_variable";
 
-html{
+*{
   box-sizing: border-box;
   padding: 0;
   margin:0;
@@ -21,15 +21,15 @@ li{
   background:white;
 }
 .main-content{
-  // margin-top: 60px;
   align-items: center;
+  @include breakpoint('desktop'){
+    margin-left: 300px;
+  }
 }
-.card-style{
-  border-radius:20px;
-  background-color:white;
-  box-shadow: 3px 8px 16px rgba(gray, 0.2);
-  margin:1.2em;
+.carousel-btn{
+  display:none;
 }
+
 %centerItem{
   display: grid;
   justify-items: center;
