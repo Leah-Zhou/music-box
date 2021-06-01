@@ -23,7 +23,7 @@ li{
 .main-content{
   align-items: center;
   @include breakpoint('desktop'){
-    margin-left: 300px;
+    margin-left:calc(300px + 4vw);
   }
 }
 .carousel-btn{

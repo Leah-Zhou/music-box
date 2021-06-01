@@ -16,7 +16,18 @@
   }
 }
 
-
+@mixin mobileSize($screenSize){
+  @if($screenSize=="xs"){
+    @media(min-width:"320px") and (max-width:"576px"){
+      @content
+    }
+}
+@else if($screenSize=="sm"){
+  @media(min-width:"577px"){
+    @content
+  }
+}
+}
 
 @mixin albumSize($sizeS, $sizeL){
   @include breakpoint('mobile'){

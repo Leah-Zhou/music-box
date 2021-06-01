@@ -34,7 +34,7 @@ async function printAllData(allData){
     const dataGroup= allData.slice(i, i+chunk);
      console.log(dataGroup);
      let ul =document.createElement('ul');
-     ul.className="carousel-item row";
+     ul.className="carousel-item song-wraper";
     dataGroup.forEach(group=>{
        let print= songs.getHtml(group);
        ul.innerHTML+=print;

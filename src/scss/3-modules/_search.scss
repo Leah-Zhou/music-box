@@ -6,7 +6,6 @@
   margin-top:80px;
   color:$darkPurple;
 }
-// search music form
 .side-bar{
   align-items: flex-start;
   @include breakpoint("desktop"){
@@ -16,6 +15,7 @@
 .search-form{
   min-width: 300px;
   max-width: 800px;
+  justify-self: center;
   margin: 2em;
   color:$darkPurple;
   &>input[name="songInfo"]{
@@ -29,24 +29,37 @@
   }
 }
 .song-list{
-  padding: 0 30px 0 40px;
   width: 100vw;
+  .carousel-item{
+    @include mobileSize('xs'){
+      margin-left:calc((100% - 260px)/2)
+    }
+    @include mobileSize('sm'){
+      margin-left:calc((50% - 260px)/2)
+    }
+  }
+}
+.song-wraper{
+  max-width: 100v;
+  grid-template-columns: 1fr;
+  @include mobileSize('tablet'){
+    grid-template-columns: 1fr 1fr;
+  }
   @include breakpoint('desktop'){
-    width: 80vw;
+    grid-template-columns: repeat(6, 1fr);
   }
 }
 .song-item{
   width: $albumWidthS;
   height: $albumHeightS;
-  margin:0.8em;
+  margin:0.7em;
   @include breakpoint('desktop'){
     height:$albumHeightL;
     width: $albumWidthL;
-    margin:1.2em;
   }
   img{
-    width:80%;
-    height: 80%;
+    width:120px;
+    height: 120px;
     object-fit: cover;
     @include breakpoint('desktop'){
       @include albumSize($albumWidthS, $albumWidthL);
@@ -62,14 +75,14 @@
 .card-style{
   display: grid;
   grid-template-columns: 1fr 1fr;
+  border-radius:20px;
   // justify-items: center;
   align-items: center;
   background-color: white;
-  border-radius:20px;
   box-shadow: 3px 8px 16px rgba(gray, 0.2);
  @include breakpoint("desktop"){
-   margin:15px;
-   grid-template-columns: 1fr;
+  //  margin:15px;
+   grid-template-columns: 100%;
    grid-template-rows: 1fr 1fr;
  }
 }

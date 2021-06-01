@@ -15,15 +15,15 @@ export default class Search  {
        <section class="py-3 greeting">
          <h1 class="display-3">Welcome<span>&#44;</span><span class="current-user"></span></h1>
        </section>
-       <section>
+
+       <section class="d-grid justify-content-center">
          <form class="search-form d-block">
            <h4 class="fw-lighter">Find Music You Like</h4>
            <input type="text" name="songInfo" class="form-control my-3" placeholder="search by song name or artist"/>
            <input type="submit" class="d-none" />
          </form>
-       </section>
 
-        <section class="carousel slide carousel-dark" id="search-music-carousel" data-interval="false">
+          <section class="carousel slide carousel-dark" id="search-music-carousel" data-interval="false">
           <div class="song-list carousel-inner">
           </div>
 
@@ -31,12 +31,13 @@ export default class Search  {
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button class="carousel-control-next carousel-btn" type="button" data-bs-target="#search-music-carousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </section>
-      </section>
+              <button class="carousel-control-next carousel-btn" type="button" data-bs-target="#search-music-carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </section>
+          </section>
+       </section>
  </div>
    `}
 

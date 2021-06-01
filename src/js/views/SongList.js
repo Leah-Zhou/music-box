@@ -1,8 +1,9 @@
 export default class SongList {
    getHtml(list){
+    // col-sm-5 col-lg-1 col-xl-1 
     let printedHtml=
     `
-      <li class="col-md-5 col-lg-3 col-xl-2 d-inline-block text-center position-relative">
+      <li class="text-center d-inline-flex position-relative">
        <div class="song-item card-style">
         <audio controls style="display:none" id="${list.id}">
           <source src=${list.preview} type="audio/ogg">
@@ -14,7 +15,7 @@ export default class SongList {
           <i class="far fa-play-circle fa-2x play play-btn" data-id="${list.id}"></i>
         </div>
         <div>
-          <p class="song-name my-1">${list.title_short}</p>
+          <p class="song-name px-1">${list.title_short}</p>
           <p class="song-artist text-muted fs-6 fw-lighter px-1">${list.artist.name}</p>
           <i class="far fa-heart fa-2x my-1" data-fav="false"></i>
         </div>
