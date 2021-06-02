@@ -23,13 +23,16 @@ li{
 .main-content{
   align-items: center;
   @include breakpoint('desktop'){
-    margin-left:calc(300px + 4vw);
+    margin-left:calc(#{$navbarWidth} + 4vw);
   }
 }
 .carousel-btn{
   display:none;
 }
-
+// .box-style{
+//   border:$primary 1px solid;
+//   margin: 1em;
+// }
 %centerItem{
   display: grid;
   justify-items: center;

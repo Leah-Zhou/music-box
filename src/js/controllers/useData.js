@@ -1,5 +1,6 @@
-import getData from './fetchData.js';
-import SongList from '../views/SongList.js';
+import getData from './fetchData';
+// import SongList from '../views/SongList.js';
+import printSongs from '../views/SongList.js';
 
 // manipulate user info data:
 const printName=async(name)=>{
@@ -27,16 +28,16 @@ async function cleanList(){
 
 async function printAllData(allData){
   const musicList =document.querySelector('.song-list');
-  let songs =new SongList();
+  // let songs =new SongList();
   let i=0;
   let chunk=6;
   for(i=0; i<allData.length; i+=chunk){
     const dataGroup= allData.slice(i, i+chunk);
-     console.log(dataGroup);
      let ul =document.createElement('ul');
      ul.className="carousel-item song-wraper";
     dataGroup.forEach(group=>{
-       let print= songs.getHtml(group);
+
+       let print= printSongs({songSrc:group.preview, album:group.album.cover_medium, songId:group.id, songName:group.title_short, artist:group.artist.name});
        ul.innerHTML+=print;
     });   
     musicList.appendChild(ul);

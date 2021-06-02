@@ -1,6 +1,7 @@
 
-import loadContent from './route.js';
-import {storeUserName, getUserInfo} from './useData.js';
+import loadContent from './route';
+import {storeUserName, getUserInfo} from './useData';
+import{fetchFav} from './favList';
 
 // check validation of registation
 const regExPattern={
@@ -74,6 +75,8 @@ const checkAuth = auth.onAuthStateChanged(
       location.hash="#search"; 
       loadContent(); 
       getUserInfo(user.uid);
+      fetchFav(user.uid);
+       
       body.classList.add('bg-color');
     }else{
       console.log('no user');
