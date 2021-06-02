@@ -31,7 +31,6 @@
 
 export default function printSongs({songSrc, album, songId, songName, artist}){
   let printedHtml=
-
 `
   <li class="text-center d-inline-flex position-relative">
    <div class="song-item card-style">
@@ -52,6 +51,5 @@ export default function printSongs({songSrc, album, songId, songName, artist}){
    </div>
   </li>
  `
-
   return printedHtml
 }

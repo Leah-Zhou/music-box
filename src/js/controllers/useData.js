@@ -1,60 +1,58 @@
 import getData from './fetchData';
-// import SongList from '../views/SongList.js';
 import printSongs from '../views/SongList.js';
 
 // manipulate user info data:
-const printName=async(name)=>{
+const printName=(name)=>{
   const userName =document.querySelector('.current-user');
   userName.innerText=name;
 }
 
 const storeUserName=async(userId, name)=>{
-  db.collection('musicApp').doc(userId).set(
+  await db.collection('musicApp').doc(userId).set(
   {username:name});
 }
 
  async function getUserInfo(userid){
-  db.collection('musicApp').doc(userid).get().then(doc=>{
+  await db.collection('musicApp').doc(userid).get().then(doc=>{
     let currentUser=doc.data().username
     printName(currentUser)
   })
 }
 
 // manipulate aysnc music data:
-async function cleanList(){
+ function cleanList(){
   const songList =document.querySelector('.song-list');
   songList.innerHTML='';
 }
 
-async function printAllData(allData){
+  function printAllData(allData){
   const musicList =document.querySelector('.song-list');
-  // let songs =new SongList();
-  let i=0;
-  let chunk=6;
-  for(i=0; i<allData.length; i+=chunk){
-    const dataGroup= allData.slice(i, i+chunk);
-     let ul =document.createElement('ul');
-     ul.className="carousel-item song-wraper";
-    dataGroup.forEach(group=>{
-
+  // let i=0;
+  // let chunk=6;
+  // for(i=0; i<allData.length; i+=chunk){
+  //   const dataGroup= allData.slice(i, i+chunk);
+  //    let ul =document.createElement('ul');
+  //    ul.className="carousel-item song-wraper";
+    for(const group of allData){
        let print= printSongs({songSrc:group.preview, album:group.album.cover_medium, songId:group.id, songName:group.title_short, artist:group.artist.name});
-       ul.innerHTML+=print;
-    });   
-    musicList.appendChild(ul);
-    musicList.firstChild.classList.add('active');
-    document.querySelectorAll('.carousel-btn').forEach(btn=>btn.style.display="block")
+       musicList.innerHTML+=print;
+    };   
+    // musicList.appendChild(ul);
+    // musicList.firstChild.classList.add('active');
+    // document.querySelectorAll('.carousel-btn').forEach(btn=>btn.style.display="block")
   }
-}
+// }
 
- async function searchMusic(){
-  const searchForm=document.querySelector('.search-form');
+  function searchMusic(){
+    const searchForm=document.querySelector('.search-form');
     searchForm.addEventListener('submit', e=>{
     e.preventDefault();
     const searchInput =searchForm.songInfo.value.trim().toLowerCase(); 
     if(searchInput){
       cleanList();
       // console.log(searchInput)
-      getData(searchInput).then((data)=>{
+      getData(searchInput).then(data=>{
+        console.log(data);
         printAllData(data);
       }).catch(err=>{console.log(err)});
     }
@@ -62,74 +60,5 @@ async function printAllData(allData){
   })
 } 
 
-const stroeFavSongs=async(favSongs)=>{
-   db.collection('musicApp').doc(favSongs.songId).set(favSongs)
-}
-const deleteFavSongs=async(delSongs)=>{
-   db.collection('musicApp').doc(delSongs.songId).delete();
-}
-
-const selectFavs=(parent, fav)=>{
-  let songSrc = parent.querySelector('source').getAttribute('src');
-  let album=parent.querySelector('.cover').getAttribute('src');
-  let songId=parent.querySelector('.album-top').getAttribute('data-id')
-  let songName =parent.querySelector('.song-name').textContent;
-  let artist =parent.querySelector('.song-artist').textContent;
-  let currentUserId = auth.currentUser.uid
-  let favSongs={songSrc, album, songId, songName, artist, currentUserId};
-
-  if(fav=="true"){
-    stroeFavSongs(favSongs);
-    console.log(favSongs);
-  }
-  else{
-    console.log(favSongs);
-    deleteFavSongs(favSongs);
-  }
-}
-
-
-async function controlMusic(){
-  const songList =document.querySelector('.song-list');
-  let isSongPlay=false;
-
-  songList.addEventListener('click', e=>{
-   if(e.target.classList.contains('fa-heart')){
-     let fav=e.target.dataset.fav;
-     let parent=e.target.parentElement.parentElement;
-    //  delete fav
-     if(fav=='true'){    
-      e.target.dataset.fav='false';
-       let isFav=e.target.dataset.fav;
-       e.target.className="far fa-heart fa-2x my-1";
-       selectFavs(parent, isFav);
-     }
-    //  add fav
-     else{
-      e.target.dataset.fav='true';
-       let isFav=e.target.dataset.fav;
-       e.target.className="fas fa-heart fa-2x my-1";
-       selectFavs(parent, isFav)
-     }
-   }
-
-   else if(e.target.classList.contains('play-btn')){
-     isSongPlay=!isSongPlay;
-     let songId=e.target.getAttribute('data-id');
-     let playSong=document.getElementById(songId);
-
-     if(isSongPlay){
-       playSong.play();
-       e.target.classList.remove('fa-play-circle');
-       e.target.classList.add('fa-pause');
-     }else{
-       playSong.pause();
-        e.target.classList.remove('fa-pause');
-        e.target.classList.add('fa-play-circle');
-     }   
-   }
- })
- }
-
-export {storeUserName,getUserInfo, searchMusic, controlMusic}
+export {storeUserName,getUserInfo, searchMusic}
 

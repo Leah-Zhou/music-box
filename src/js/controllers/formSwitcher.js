@@ -1,11 +1,11 @@
 
 // toggle signIn and sign up
-async function switchContent(offset){
+function switchContent(offset){
   const formContainer =document.querySelector('.form-content');
    formContainer.style.marginLeft=offset
 }
  
-  export async function loginCtrl(){
+  export function loginCtrl(){
     const login =document.querySelector('label.login');
     login.addEventListener('click',e=>{
         e.stopPropagation();
@@ -13,7 +13,7 @@ async function switchContent(offset){
   })
 }
 
-  export async function signupCtrl(){
+  export function signupCtrl(){
     const signup=document.querySelector('label.signup');
     signup.addEventListener('click',e=>{
       e.stopPropagation();

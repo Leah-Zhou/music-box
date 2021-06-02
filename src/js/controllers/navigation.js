@@ -9,8 +9,5 @@ const ToggleMenu=()=>{
   })
 }
 
-// const ToggleActive=()=>{
-//    const navItems =document.querySelector('.navbar')
-// }
 
 export {ToggleMenu}

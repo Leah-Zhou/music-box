@@ -1,0 +1,139 @@
+@import "../1-helpers/helpers";
+@import "../2-base/base";
+
+.song-list{
+  display: flex;
+  flex-direction: row;
+  // .carousel-item{
+  //   margin-left:calc((100% - #{$navbarWidth})/2);
+  //   @include breakpoint('tablet'){
+  //     margin-left:calc((40% - #{$navbarWidth})/2)
+  //   }
+  //   @include breakpoint('desktop'){
+  //     margin-left:0;
+  //   }
+  // } 
+}
+.song-wraper{
+  // max-width: 100v;
+  grid-template-columns: 1fr;
+  @include mobileSize('tablet'){
+    grid-template-columns: 1fr 1fr;
+  }
+  @include breakpoint('desktop'){
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+.song-item{
+  width: $albumWidthS;
+  height: $albumHeightS;
+  margin:0.7em;
+  @include breakpoint('desktop'){
+    height:$albumHeightL;
+    width: $albumWidthL;
+  }
+  img{
+    width:110px;
+    height: 110px;
+    object-fit: cover;
+    @include breakpoint('desktop'){
+      @include albumSize($albumWidthS, $albumWidthL);
+      margin:0 auto;
+      border-top-left-radius:$albumRadius;
+      border-top-right-radius:$albumRadius;
+      border-bottom-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+    }
+  }
+}
+
+.card-style{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius:20px;
+  align-items: center;
+  background-color: white;
+  box-shadow: 3px 8px 16px rgba(gray, 0.2);
+ @include breakpoint("desktop"){
+   grid-template-columns: 100%;
+   grid-template-rows: 1fr 1fr;
+ }
+}
+%truncate{
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.song-name{
+  font-size: clamp(14px, 2vw, 15px);
+  @extend %truncate;
+  margin-block-end: 0px !important;
+}
+.song-artist{
+  font-size:0.7em !important;
+  margin:0;
+  @extend %truncate;
+}
+
+.album{
+  position: relative;
+  &>i{
+    opacity: 0.8;
+    z-index:3;
+    display: none;
+    position: absolute;
+    top:40%;
+    left:40%;
+  }
+}
+.album>.play{
+  display: block;
+  color: rgba(white, 0.9);
+}
+
+.song-artist + .fa-heart{
+  color:rgba($primary, 0.7);
+}
+// .carousel-control-prev{
+//  @include breakpoint('tablet'){
+//   left:-80px !important;
+//  }
+// }
+.fa-2x{
+   font-size: 1.5em;
+}
+.fa-3x{
+  font-size:2.5em;
+}
+// ******************************************************
+.fav-section{
+  margin-top: 2em;
+  border-top: 1px solid gray;
+  @include breakpoint('desktop'){
+    margin-left:calc(#{$navbarWidth} + 8vw);
+  }
+  h5{
+    color: $primary;
+  }
+}
+.fav-list{
+  padding-bottom: 60px;
+  padding-top:60px;
+  display: grid;
+  align-content: start;
+  transform: rotate(-90deg) translateY(-350px);
+  width: 280px;
+  height: 100vw;
+  transform-origin: top right;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  li{
+    transform: rotate(90deg);
+    margin:4em;
+    @include breakpoint('desktop'){
+      margin:0;
+    }
+  }
+}
+::-webkit-scrollbar{
+  width: 1px;
+}

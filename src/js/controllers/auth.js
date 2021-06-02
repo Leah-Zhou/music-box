@@ -18,7 +18,7 @@ const checkValidation=(target, pattern)=>{
   }
 }
 // signIn function 
-async function signInUser(){
+const signInUser=()=>{
   const signInForm=document.querySelector('.form-signin');
   const reminder=signInForm.querySelector('.signin-hint');
 
@@ -36,7 +36,7 @@ async function signInUser(){
 }
 
 // signUp function 
-async function signUpUser(){
+ const signUpUser=()=>{
   const registerForm=document.querySelector('.form-register');
 
   registerForm.addEventListener('keyup', e=>{
@@ -60,7 +60,7 @@ async function signUpUser(){
 }
 
 // sign out user 
-async function signOutUser(){
+const signOutUser=()=>{
   const signOut =document.querySelector('.sign-out');
   signOut.addEventListener('click', ()=>{
     auth.signOut();
