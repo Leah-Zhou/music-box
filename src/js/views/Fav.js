@@ -1,11 +1,11 @@
 const favMusic=`
- <div class="container fav-section">
-  <h5 class="fw-lighter">Your Fav Music</h5>
+ <section class="container fav-section">
+  <h5>Your Fav Music</h5>
   <ul class="fav-list">
     
   </ul>
 
- </div>
+ </section>
 `
 
 export {favMusic as default};

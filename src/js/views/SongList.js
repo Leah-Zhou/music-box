@@ -32,7 +32,7 @@
 export default function printSongs({songSrc, album, songId, songName, artist}){
   let printedHtml=
 `
-  <li class="text-center d-inline-flex position-relative">
+  <li class="text-center">
    <div class="song-item card-style">
     <audio controls style="display:none" id="${songId}">
       <source src=${songSrc} type="audio/ogg">

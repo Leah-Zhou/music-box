@@ -9,7 +9,8 @@ const Nav =
         <i class="fas fa-ellipsis-v px-3"></i>
       </div>
   </nav>   
-  <ul class="navbar-nav">
+  <div class="navbar-nav">
+    <ul>
     <li class="nav-fav"> 
       <input type="radio" name="nav-opt" id="nav-fav" checked />
       <label for="nav-fav"> 
@@ -30,7 +31,9 @@ const Nav =
       Sign Out
       </label>
   </li>
+  <div class="nav-slider"></div>
   </ul>
+  </div>
 </section>`
 
 export {Nav as default}

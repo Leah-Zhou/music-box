@@ -27,16 +27,11 @@ const storeUserName=async(userId, name)=>{
 
   function printAllData(allData){
   const musicList =document.querySelector('.song-list');
-  // let i=0;
-  // let chunk=6;
-  // for(i=0; i<allData.length; i+=chunk){
-  //   const dataGroup= allData.slice(i, i+chunk);
-  //    let ul =document.createElement('ul');
-  //    ul.className="carousel-item song-wraper";
     for(const group of allData){
        let print= printSongs({songSrc:group.preview, album:group.album.cover_medium, songId:group.id, songName:group.title_short, artist:group.artist.name});
        musicList.innerHTML+=print;
-    };   
+    }; 
+    musicList.classList.add('fav-list')  
     // musicList.appendChild(ul);
     // musicList.firstChild.classList.add('active');
     // document.querySelectorAll('.carousel-btn').forEach(btn=>btn.style.display="block")

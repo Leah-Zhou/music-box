@@ -77,12 +77,12 @@ const checkAuth = auth.onAuthStateChanged(
       getUserInfo(user.uid);
       fetchFav(user.uid);
        
-      body.classList.add('bg-color');
+      // body.classList.add('bg-color');
     }else{
       console.log('no user');
       location.hash="#home";
       loadContent(); 
-      body.classList.remove('bg-color');
+      // body.classList.remove('bg-color');
     }
   }
 )
