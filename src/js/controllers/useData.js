@@ -1,5 +1,6 @@
-import getData from './fetchData';
-import printSongs from '../views/SongList.js';
+import {getData, getRecommendation} from './fetchData';
+import printSongs from '../views/SongList';
+import printRecomdList from '../views/Recommendation';
 
 // manipulate user info data:
 const printName=(name)=>{
@@ -55,5 +56,21 @@ const storeUserName=async(userId, name)=>{
   })
 } 
 
-export {storeUserName,getUserInfo, searchMusic}
+function manipulateRecomd(){
+  const recomdContainer = document.querySelector('.recommendation-list');
+  getRecommendation().then(resp=>{
+    console.log(resp);
+    for (const item of resp) {
+      let coverart= item.images.coverart;
+      let title=item.title;
+      let artist =item.subtitle;
+      let printHtml=printRecomdList({coverart, title, artist});
+      recomdContainer.innerHTML+=printHtml;
+      // console.log(recomdContainer);
+    }
+    document.querySelector('.carousel-item').classList.add('active')
+    // recomdContainer.querySelector('carousel-item').classList.add('active')
+  }).catch(err=>{console.log(err)})
+}
+export {storeUserName,getUserInfo, searchMusic, manipulateRecomd}
 

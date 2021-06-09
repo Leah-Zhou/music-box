@@ -1,5 +1,5 @@
 import { signOutUser } from "../controllers/auth";
-import {searchMusic} from '../controllers/useData';
+import {searchMusic, manipulateRecomd} from '../controllers/useData';
 import controlMusic from '../controllers/controlMusic';
 import {ToggleMenu} from "../controllers/navigation";
 import Nav from './Nav';
@@ -31,15 +31,25 @@ export default class Search  {
         <ul class="song-list">
         </ul>
       </section>
-
     </section>
-      
+      <section class="carousel slide" id="listControl">
+       <div class="carousel-inner recommendation-list"></div>
+       <button class="carousel-control-prev" type="button" data-bs-target="#listControl" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+      </button>
+       <button class="carousel-control-next" type="button" data-bs-target="#listControl" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </section>
       ${favMusic}
      </div>
  </div>
    `}
 
    async initControllers(){
+     manipulateRecomd();
      signOutUser();
      searchMusic();
      controlMusic();

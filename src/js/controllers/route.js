@@ -24,7 +24,7 @@ async function getContent(hashId){
       body.innerHTML=contentViews[hashId]; 
       await searchPage.initControllers();
       break;
-
+    
     default:
       body.innerHTML='<h1>PAGE NOT FOUND</h1>'; 
   } 
