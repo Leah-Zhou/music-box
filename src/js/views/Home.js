@@ -9,13 +9,11 @@ export default class Home{
     return `
     <div class="home-wraper">
       <section class="title">
+        <img src="imgs/logo.png" alt="music box logo" class="logo">
         <h1 class="display-2">MUSIC BOX</h1>
         <p>FIND YOUR LOVED MUSIC</p>
+        <img src="imgs/hero-img.png" alt="hero" class="hero-img"> 
       </section>
-      <div>
-        <img src="imgs/headphone.png" alt="headphone" class="float-headphone">
-        <img src="imgs/person.png" alt="person" class="float-person">
-      </div>
       <section class="d-grid form-wrap">
       <div class="form-slider">
         <input type="radio" name="slide" id="login" checked />
@@ -33,7 +31,7 @@ export default class Home{
             <input type="password" id="signIn-password" class="form-control mt-4" placeholder="password" required>
             <p class="signin-hint"></p>
           </div>
-          <button class="btn btn-secondary px-5">Sign In</button>
+          <button class="btn btn-style px-5">Sign In</button>
         </form>
 
         <form class="form-register">
@@ -49,10 +47,11 @@ export default class Home{
             <input type="password" id="register-password" name="password" class="form-control mt-4" placeholder="password" required>
             <p class="register-pw-hint">Minimun 6 characters</p>
           </div>
-          <button class="btn btn-secondary px-5">SignUp</button>
+          <button class="btn btn-style px-5">SignUp</button>
         </form>
       </div>
     </section>
+        
     </div>
     `
   }

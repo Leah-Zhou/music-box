@@ -1,35 +1,53 @@
 
-@mixin floatImg($top, $left, $width){
-  width: 100%;
-  max-width: $width;
-  position: absolute;
-  top:$top;
-  left:$left;
-  z-index: -1;
-}
-@keyframes floating {
-  0%{
-    transform: translate(0px, 0px);
-  }
-  60%{
-    transform: translate(5px, 30px);
-  }
-  100%{
-    transform: translate(0px, 0px);
-  }
-}
-.float-headphone{
-  @include breakpoint('desktop'){
-    @include floatImg(5%, 65%, 250px);
-  }
-  @include floatImg(20%, 25%, 250px);
-  animation: floating infinite 15s 0.6s forwards ease;
-}
+// @mixin floatImg($top, $left, $width){
+//   width: 100%;
+//   max-width: $width;
+//   position: absolute;
+//   top:$top;
+//   left:$left;
+//   z-index: -1;
+// }
+// @keyframes floating {
+//   0%{
+//     transform: translate(0px, 0px);
+//   }
+//   60%{
+//     transform: translate(5px, 30px);
+//   }
+//   100%{
+//     transform: translate(0px, 0px);
+//   }
+// }
+// .float-headphone{
+//   @include breakpoint('desktop'){
+//     @include floatImg(5%, 65%, 250px);
+//   }
+//   @include floatImg(20%, 25%, 250px);
+//   animation: floating infinite 15s 0.6s forwards ease;
+// }
 
-.float-person{
+// .float-person{
+//   @include breakpoint('desktop'){
+//     @include floatImg(40%, 10%, 380px);
+//   }
+//   @include floatImg(60%, 5%, 350px);
+//   animation: floating infinite 10s forwards ease;
+// }
+
+.hero-img{
+  width: 90vw;
+  max-width: 500px;
+  height: auto;
+  position: absolute;
+  top:120%;
+  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%);
   @include breakpoint('desktop'){
-    @include floatImg(40%, 10%, 380px);
+    position: relative;
   }
-  @include floatImg(60%, 5%, 350px);
-  animation: floating infinite 10s forwards ease;
+}
+.logo{
+  width: clamp(56px, 2vw, 70px);
+  
 }

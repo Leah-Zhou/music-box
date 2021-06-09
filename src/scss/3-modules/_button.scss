@@ -1,0 +1,24 @@
+@import "../1-helpers/helpers";
+@import "../2-base/base";
+
+.btn-style{
+  margin:1em auto;
+  width: 100%;
+  height: 45px;
+  background: linear-gradient(354deg, $primary -33.72%, #E597A8 84.74%);
+  font-weight: 700;
+  border:none;
+}
+.btn-style:hover{
+  background: $primary;
+  color:white;
+}
+.btn-style:focus{
+  background:$primary;
+  color:white;
+}
+.btn{
+  color:white;
+  border-radius: 8px;
+}
+

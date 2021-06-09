@@ -6,8 +6,8 @@
   margin:0;
 }
 body{
-  background: radial-gradient($primary, $darkPurple);
-  // background-color: rgba($primary, 0.5);
+  height: 100vh;
+  background: linear-gradient(121.75deg, $secondaryLight 11.15%, $primary 112.14%);
   position: relative;
 }
 ul{

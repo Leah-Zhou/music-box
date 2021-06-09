@@ -6,21 +6,41 @@
   display: grid;
   justify-content: center;
   align-items: center;
+  max-width: 1100px;
+  justify-items: center;
+  margin: 0 auto;
+  @include breakpoint('desktop'){
+    margin-top:80px;
+    position: absolute;
+    bottom:0;
+    left: 10%;
+    align-items: center;
+    grid-template-columns: 1fr 1.2fr;
+  }
 }
 .title{
    max-width: 500px;
-   margin: 2em auto;
+   margin: 2em auto 0 auto;
    text-align: center;
    color:white;
+   position: relative;
+}
+.form-control{
+  border:none !important;
+  background: rgba(255, 255, 255, 0.76);
 }
 .form-wrap{
   width:350px;
-  background-color: rgba(0,0, 0, 0.5);
+  height: 470px;
+  background-color: rgba(255, 255, 255, 0.5);
   margin: 20px auto;
   padding: 20px;
   overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 13px 15px 20px rgba(0,0,0,0.2);
+  border-radius: 13px;
+  box-shadow: 13px 15px 18px rgba(105, 105, 105, 0.2);
+  @include breakpoint('tablet'){
+    height: 500px;
+  }
 }
 .form-content {
   display: flex;
@@ -31,6 +51,9 @@
   &>form{
     width:320px;
     padding:30px;
+  }
+  button{
+    margin-top:50px;
   }
    p{
     color:$secondary;
@@ -45,12 +68,9 @@
 .form-signin{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content:center;
   input{
     margin:0.8em 0;
-  }
-  button{
-    margin-top:50px;
   }
 }
 .form-slider{
@@ -62,9 +82,9 @@
   }
   &>label{
     text-align: center;
-    color:white;
+    font-weight: 700;
+    color:$darkBlack;
     font-size: 17px;
-    font-size: bold;
     width:50%;
   }
 }
@@ -73,15 +93,18 @@
   width: 115px;
   border-radius: 50px;
   margin-left: 25px;
-  background-color: $secondary;
+  background-color: $primary;
    position: absolute;
-   bottom:-10px;
+   bottom:20%;
    left: 0%;
    transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+   @include breakpoint('tablet'){
+    top:80%;
+   }
 }
 #login:checked~label.login, 
 #signup:checked~label.signup{
-  color:$secondary;
+  color:$primary;
  }
  #login:checked~.slider{
    left: 0%;
@@ -89,16 +112,3 @@
  #signup:checked~.slider{
   left: 50%;
 }
-.btn-secondary{
-  margin:1em auto;
-  width: 100%;
-  background-color: $secondary;
-  border:none;
-}
-.btn-secondary:hover{
-  background-color: $primary;
-}
-.btn-secondary:focus{
-  background-color: $secondary;
-}
-
