@@ -27,10 +27,10 @@
     align-items: baseline;
     padding:1.2em 1.5em;
     transition: font-weight .3 ease-out;
-    &:hover{
-      background-color: darken($primary,1.3);
-      font-weight: 600;
-    }
+    // &:hover{
+    //   background-color: darken($primary,1.3);
+    //   font-weight: 600;
+    // }
   }
   &>i{
     display: inline;
@@ -43,9 +43,8 @@
   }
 }
 #nav-fav:checked~label,
- #nav-account:checked~label{
-   color:$primary;
-  // background-color: darken($primary,1.3);
+ #nav-account:checked~label, #nav-out:checked~label{
+     color:$primary;
 }
 .logo>img{
   width: 30px;
@@ -68,4 +67,7 @@
   top:0;
   right:0;
   z-index: -1;
+  transition: all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
 }
+
+

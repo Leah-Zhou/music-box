@@ -7,7 +7,8 @@
 }
 body{
   height: 100vh;
-  background: linear-gradient(121.75deg, $secondaryLight 11.15%, $primary 112.14%);
+  // background-size: cover;
+  background: linear-gradient(to bottom right, $secondaryLight, $primary);
   position: relative;
 }
 ul{
@@ -16,6 +17,9 @@ ul{
 }
 li{
   list-style:none;
+}
+h5{
+  color: $primary;
 }
 .bg-color{
   background:white;

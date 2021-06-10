@@ -4,7 +4,7 @@
 .recomd-intro{
   position: absolute;
   margin:0 1em 0 1em;
-  padding-left: 0.6em;
+  padding-left: 1.2em;
   bottom: 1em;
   backdrop-filter: blur(5px);
   width: 90%;
@@ -12,12 +12,14 @@
   border-bottom-right-radius: 40px;
   max-height: 300px;
   P{
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.7rem;
     font-weight: 600;
     font-size: clamp(16px, 2vw, 17px);
   }
 }
-
+.recomd-title{
+  font-size: clamp(17px, 2vw, 23px);
+}
 .carousel-item{
   &>img{
     padding:1em;

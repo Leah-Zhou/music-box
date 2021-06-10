@@ -39,13 +39,15 @@ export default function printSongs({songSrc, album, songId, songName, artist}){
     </audio>
     <div class="album">
       <img src=${album} alt="cover of ${songName}" class="cover my-1">
-      <div class="album-top play fa-3x"  data-id="${songId}">
+      <div class="album-top play"  data-id="${songId}">
       </div>
-      <i class="far fa-play-circle fa-2x play play-btn" data-id="${songId}"></i>
+      <i class="far fa-play-circle fa-3x play play-btn" data-id="${songId}"></i>
     </div>
-    <div>
-      <p class="song-name px-1">${songName}</p>
-      <p class="song-artist text-muted fs-6 fw-lighter px-1">${artist}</p>
+    <div class="song-intro"> 
+      <div>
+         <p class="song-name px-1">${songName}</p>
+         <p class="song-artist text-muted fs-6 fw-lighter px-1">${artist}</p>
+      </div>
       <i class="far fa-heart fa-2x my-1" data-fav="false"></i>
     </div>
    </div>

@@ -2,7 +2,10 @@
 @import "../2-base/base";
 
 .song-container{
-  max-height:$listHeight;
+  max-height:calc(#{$albumHeightS} +50px);
+  @include breakpoint('desktop'){
+    max-height:calc(#{$albumHeightL} + 10vh); 
+  }
   margin-left: 10px;
 }
 .song-list{
@@ -34,15 +37,12 @@
      @include breakpoint('desktop'){
      @include albumSize($albumWidthS, $albumWidthL);
       margin:0 auto;
-      border-top-left-radius:$albumRadius;
-      border-top-right-radius:$albumRadius;
-      border-bottom-right-radius: 0px;
-      border-bottom-left-radius: 0px;
+      box-shadow: 3px 8px 16px rgba(gray, 0.35);
     }
   }
 }
 .box-style{
-  background-color: rgba(white,0.6);
+  background:linear-gradient(to bottom right, rgba(white, 0.7), rgba(white, 0.4));
   border-radius:13px;
   margin:0.7em 1.2em;
   overflow: hidden;
@@ -55,6 +55,8 @@
   background-color: white;
   box-shadow: 3px 8px 16px rgba(gray, 0.2);
  @include breakpoint("desktop"){
+   box-shadow: 0 0 0 rgba(gray, 0);
+   background-color: rgba(white, 0);
    grid-template-columns: 100%;
    grid-template-rows: 1fr 1fr;
  }
@@ -62,6 +64,13 @@
 %truncate{
   text-overflow: ellipsis;
   overflow: hidden;
+}
+.song-intro{
+  @include breakpoint('desktop'){
+    display: flex;
+    justify-content: space-between;
+    align-items: inherit;
+  }
 }
 .song-name{
   font-size: clamp(14px, 2vw, 15px);
@@ -81,8 +90,9 @@
     z-index:3;
     display: none;
     position: absolute;
-    top:40%;
-    left:40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 .album>.play{
@@ -90,8 +100,8 @@
   color: rgba(white, 0.9);
 }
 
-.song-artist + .fa-heart{
-  color:rgba($primary, 0.7);
+ .fa-heart{
+  color:rgba($primary, 0.7) !important;
 }
 .fa-2x{
    font-size: 1.5em;
@@ -102,12 +112,9 @@
 // ******************************************************
 .fav-section{
   margin-top: 2em;
-  max-height:$listHeight;
-  // @include breakpoint('desktop'){
-  //   margin-left:calc(#{$navbarWidth} + 8vw);
-  // }
-  h5{
-    color: $primary;
+  max-height:calc(#{$albumHeightS} + 50px);
+  @include breakpoint('desktop'){
+    max-height:calc(#{$albumHeightL} + 10vh); 
   }
 }
 .fav-list{

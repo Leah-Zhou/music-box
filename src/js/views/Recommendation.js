@@ -5,7 +5,7 @@
         <div class="carousel-item">
           <img src=${coverart} alt="${title}" class="d-block w-100">
           <div class="recomd-intro">
-            <p>${title}</p>
+            <h6 class="recomd-title">${title}</h6>
             <p>${artist}</p>
         </div>
 `

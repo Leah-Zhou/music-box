@@ -1,7 +1,7 @@
 import printSongs from '../views/SongList';
 
  const fetchFav=async(userId)=>{
-    db.collection("musicApp").where("currentUserId", "==", userId)
+    let unsubscribe =db.collection("musicApp").where("currentUserId", "==", userId)
     .onSnapshot((querySnapshot) => {
       querySnapshot.docChanges().forEach(change=>{
            let songObj=change.doc.data();
@@ -11,7 +11,6 @@ import printSongs from '../views/SongList';
          
            favSection.innerHTML+=printSongs(songObj);
       })
-
     });
 }
 

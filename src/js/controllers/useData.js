@@ -33,11 +33,8 @@ const storeUserName=async(userId, name)=>{
        musicList.innerHTML+=print;
     }; 
     musicList.classList.add('fav-list')  
-    // musicList.appendChild(ul);
-    // musicList.firstChild.classList.add('active');
-    // document.querySelectorAll('.carousel-btn').forEach(btn=>btn.style.display="block")
   }
-// }
+
 
   function searchMusic(){
     const searchForm=document.querySelector('.search-form');
@@ -66,10 +63,8 @@ function manipulateRecomd(){
       let artist =item.subtitle;
       let printHtml=printRecomdList({coverart, title, artist});
       recomdContainer.innerHTML+=printHtml;
-      // console.log(recomdContainer);
     }
     document.querySelector('.carousel-item').classList.add('active')
-    // recomdContainer.querySelector('carousel-item').classList.add('active')
   }).catch(err=>{console.log(err)})
 }
 export {storeUserName,getUserInfo, searchMusic, manipulateRecomd}
