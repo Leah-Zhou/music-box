@@ -1,6 +1,29 @@
+@import "../1-helpers/helpers";
+@import "../2-base/base";
+
 .recomd-intro{
   position: absolute;
+  margin:0 1em 0 1em;
+  padding-left: 0.6em;
   bottom: 1em;
-  left: 50%;
-  background-color: rgba(white, 0.7);
+  backdrop-filter: blur(5px);
+  width: 90%;
+  color:white;
+  border-bottom-right-radius: 40px;
+  max-height: 300px;
+  P{
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: clamp(16px, 2vw, 17px);
+  }
+}
+
+.carousel-item{
+  &>img{
+    padding:1em;
+    @include imgBorder(40px);
+    max-height: 550px;
+    object-fit: cover;
+    object-position: top left;
+  }
 }

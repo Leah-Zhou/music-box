@@ -32,7 +32,7 @@ export default class Search  {
         </ul>
       </section>
     </section>
-      <section class="carousel slide" id="listControl">
+      <section class="carousel slide main-content" id="listControl">
        <div class="carousel-inner recommendation-list"></div>
        <button class="carousel-control-prev" type="button" data-bs-target="#listControl" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>

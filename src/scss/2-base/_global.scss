@@ -23,11 +23,22 @@ li{
 .main-content{
   align-items: center;
   @include breakpoint('desktop'){
-    margin-left:calc(#{$navbarWidth} + 4vw);
+    margin-left:calc(#{$navbarWidth} + 1vw);
   }
 }
 %centerItem{
   display: grid;
   justify-items: center;
   align-items: center;
+}
+%imgBorder{
+  border-top-left-radius:$coverRadius;
+  border-top-right-radius:$coverRadius;
+  border-bottom-right-radius: $coverRadius;
+}
+
+@mixin imgBorder($radius){
+  border-top-left-radius:$radius;
+  border-top-right-radius:$radius;
+  border-bottom-right-radius:$radius;
 }
