@@ -1,5 +1,6 @@
 @import "../1-helpers/helpers";
 @import "../2-base/base";
+
 .song-container{
   max-height:$listHeight;
   margin-left: 10px;
@@ -29,11 +30,9 @@
     width:110px;
     height: 110px;
     object-fit: cover;
-    border-top-left-radius:$coverRadius;
-    border-top-right-radius:$coverRadius;
-    border-bottom-right-radius: $coverRadius;
-    @include breakpoint('desktop'){
-      @include albumSize($albumWidthS, $albumWidthL);
+     @include imgBorder($coverRadius);
+     @include breakpoint('desktop'){
+     @include albumSize($albumWidthS, $albumWidthL);
       margin:0 auto;
       border-top-left-radius:$albumRadius;
       border-top-right-radius:$albumRadius;
@@ -104,9 +103,9 @@
 .fav-section{
   margin-top: 2em;
   max-height:$listHeight;
-  @include breakpoint('desktop'){
-    margin-left:calc(#{$navbarWidth} + 8vw);
-  }
+  // @include breakpoint('desktop'){
+  //   margin-left:calc(#{$navbarWidth} + 8vw);
+  // }
   h5{
     color: $primary;
   }
@@ -114,6 +113,7 @@
 .fav-list{
   padding-bottom: 60px;
   padding-top:60px;
+  margin-left: 1em;
   display: grid;
   align-content: start;
   transform: rotate(-90deg) translateY(-350px);
