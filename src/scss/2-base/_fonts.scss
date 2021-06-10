@@ -1,0 +1,10 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap');
+
+h5{
+  color: $primary;
+  font-size: clamp(16px, 2vw, 18px) !important;
+}
+.greeting, h5{
+  font-family: 'Montserrat', sans-serif;
+}

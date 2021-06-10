@@ -17,7 +17,7 @@ export default class Search  {
         <section>
            <div class="top-section">
               <section class="py-3 greeting">
-                <h1 class="container">Welcome<span>&#44;</span><span class="current-user"></span></h1>
+                <h1 class="container">Welcome<span>&#44;</span><span class="current-user"></span>	&#33;</h1>
               </section>
              <section class="container search-section">
               <form class="search-form d-block">
@@ -34,8 +34,8 @@ export default class Search  {
       </section>
       
     </section>
-      <section class="container carousel slide" id="listControl">
-        <h5>Recommendation</h5>
+      <section class="carousel slide" id="listControl">
+        <h5 class="container">Recommendation</h5>
        <div class="carousel-inner recommendation-list"></div>
        <button class="carousel-control-prev" type="button" data-bs-target="#listControl" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>

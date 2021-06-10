@@ -6,27 +6,48 @@
   margin:1em;
   padding-left: 1.2em;
   bottom: 1em;
-  backdrop-filter: blur(5px);
+  // backdrop-filter: blur(5px);
   width: 50%;
   color:white;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
+  // border-top-right-radius: 50px;
+  // border-bottom-right-radius: 50px;
   max-height: 300px;
+  position: relative;
+  z-index:3;
   P{
     margin-bottom: 0.7rem;
     font-weight: 600;
-    font-size: clamp(16px, 2vw, 17px);
+    font-size: clamp(13px, 2vw, 15px);
   }
 }
 .recomd-title{
   font-size: clamp(17px, 2vw, 23px);
 }
 .carousel-item{
+  background-size: cover;
+  // border-radius: 40px;
   &>img{
     padding:1em;
     @include imgBorder(40px);
-    max-height: 550px;
+    max-height: 400px;
     object-fit: cover;
-    object-position: top left;
+    object-position: center;
+    position: relative;
+    z-index: 3;
   }
+  &::before{
+    content: "";
+    // border-radius: 40px;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(white, 0.2);
+    backdrop-filter: blur(10px);
+  }
+}
+.carousel-control-next, .carousel-control-prev {
+  z-index:3 !important;
 }

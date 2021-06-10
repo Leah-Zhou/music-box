@@ -58,10 +58,11 @@ function manipulateRecomd(){
   getRecommendation().then(resp=>{
     console.log(resp);
     for (const item of resp) {
-      let coverart= item.images.coverart;
+      let coverart= item.images.background;
       let title=item.title;
       let artist =item.subtitle;
-      let printHtml=printRecomdList({coverart, title, artist});
+      let prevUrl =item.url;
+      let printHtml=printRecomdList({coverart, title, artist, prevUrl});
       recomdContainer.innerHTML+=printHtml;
     }
     document.querySelector('.carousel-item').classList.add('active')

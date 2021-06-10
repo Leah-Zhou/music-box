@@ -46,7 +46,7 @@ export default function printSongs({songSrc, album, songId, songName, artist}){
     <div class="song-intro"> 
       <div>
          <p class="song-name px-1">${songName}</p>
-         <p class="song-artist text-muted fs-6 fw-lighter px-1">${artist}</p>
+         <p class="song-artist text-muted fs-6 px-1">${artist}</p>
       </div>
       <i class="far fa-heart fa-2x my-1" data-fav="false"></i>
     </div>
