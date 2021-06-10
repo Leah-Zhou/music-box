@@ -20,14 +20,19 @@ li{
 }
 h5{
   color: $primary;
+  font-size: clamp(17px, 2vw, 21px) !important;
 }
 .bg-color{
   background:white;
 }
 .main-content{
   align-items: center;
+  &>section{
+    margin-bottom:2em;
+  }
   @include breakpoint('desktop'){
-    margin-left:calc(#{$navbarWidth} + 1vw);
+    margin-left:$navbarWidth;
+    padding: 2em;
   }
 }
 %centerItem{

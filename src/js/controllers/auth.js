@@ -76,10 +76,12 @@ const checkAuth = auth.onAuthStateChanged(
       loadContent(); 
       getUserInfo(user.uid);
       fetchFav(user.uid);
+      body.style.height="100%"
     }else{
       console.log('no user');
       location.hash="#home";
       loadContent(); 
+      body.style.height="100vh"
     }
   }
 )
