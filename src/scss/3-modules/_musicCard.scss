@@ -1,13 +1,6 @@
 @import "../1-helpers/helpers";
 @import "../2-base/base";
 
-.song-container{
-  max-height:calc(#{$albumHeightS} +50px);
-  @include breakpoint('desktop'){
-    max-height:calc(#{$albumHeightL} + 10vh); 
-  }
-  margin-left: 10px;
-}
 .song-list{
   height: 0;
   transition: height .3s ease-out;
@@ -110,7 +103,7 @@
   font-size:2.5em;
 }
 // ******************************************************
-.fav-section{
+.control-height{
   margin-top: 2em;
   max-height:calc(#{$albumHeightS} + 50px);
   @include breakpoint('desktop'){

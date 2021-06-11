@@ -28,7 +28,7 @@ export default class Search  {
             </section>
            </div>
 
-      <section class="song-container">
+      <section class="control-height">
         <ul class="song-list">
         </ul>
       </section>
