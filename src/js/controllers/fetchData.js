@@ -4,18 +4,18 @@ import myKey from '../privacy/mykey';
 
 
 
-export async function getRecommendation(){
-  const request =await fetch("https://shazam.p.rapidapi.com/songs/list-recommendations?key=484129036&locale=en-US", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": myKey,
-		"x-rapidapi-host": "shazam.p.rapidapi.com"
-	}
-})
-   const recommendations=await request.json();
-   let respArray =recommendations.tracks;
-   return respArray;
-}
+// export async function getRecommendation(id){
+//   const request =await fetch(`https://deezerdevs-deezer.p.rapidapi.com/track/${id}`, {
+// 	"method": "GET",
+// 	"headers": {
+// 		"x-rapidapi-key": myKey,
+// 		"x-rapidapi-host":"deezerdevs-deezer.p.rapidapi.com"
+// 	}
+// })
+//    const recommendations=await request.json();
+//    let respArray =recommendations.tracks;
+//    return respArray;
+// }
 
  export async function getData(searchInput){   
   const searchKey=searchInput

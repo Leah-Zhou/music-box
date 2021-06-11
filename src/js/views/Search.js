@@ -17,9 +17,9 @@ export default class Search  {
         <section>
            <div class="top-section">
               <section class="py-3 greeting">
-                <h1 class="container">Welcome<span>&#44;</span><span class="current-user"></span>	&#33;</h1>
+                <h1 class="container-lg">Welcome<span>&#44;</span><span class="current-user"></span>	&#33;</h1>
               </section>
-             <section class="container search-section">
+             <section class="container-lg search-section">
               <form class="search-form d-block">
                 <h5>Find Music You Like</h5>
                 <input type="text" name="songInfo" class="form-control my-3" placeholder="search by song name or artist"/>
@@ -35,7 +35,7 @@ export default class Search  {
       
     </section>
       <section class="carousel slide" id="listControl">
-        <h5 class="container">Recommendation</h5>
+        <h5 class="container-lg">Recommendation</h5>
        <div class="carousel-inner recommendation-list"></div>
        <button class="carousel-control-prev" type="button" data-bs-target="#listControl" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -56,7 +56,9 @@ export default class Search  {
      MoveSlider();
      signOutUser();
      searchMusic();
-     controlMusic();
+     controlMusic(document.querySelector('.recommendation-list'));
+     controlMusic(document.querySelector('.fav-section'));
+     controlMusic(document.querySelector('.song-list'));
      ToggleMenu();
    }
 }

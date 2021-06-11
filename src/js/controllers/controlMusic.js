@@ -27,11 +27,11 @@ const selectFavs=(parent, fav)=>{
 
 
 
-export default function controlMusic(){
-  const songList =document.querySelector('.song-list');
+export default function controlMusic(musicContent){
+  // const songList =document.querySelector('.song-list');
   let isSongPlay=false;
 
-  songList.addEventListener('click', e=>{
+  musicContent.addEventListener('click', e=>{
    if(e.target.classList.contains('fa-heart')){
      let fav=e.target.dataset.fav;
      let parent=e.target.parentElement.parentElement;
@@ -59,10 +59,10 @@ export default function controlMusic(){
      if(isSongPlay){
        playSong.play();
        e.target.classList.remove('fa-play-circle');
-       e.target.classList.add('fa-pause');
+       e.target.classList.add('fa-pause-circle');
      }else{
        playSong.pause();
-        e.target.classList.remove('fa-pause');
+        e.target.classList.remove('fa-pause-circle');
         e.target.classList.add('fa-play-circle');
      }   
    }

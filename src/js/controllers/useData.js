@@ -1,4 +1,4 @@
-import {getData, getRecommendation} from './fetchData';
+import {getData} from './fetchData';
 import printSongs from '../views/SongList';
 import printRecomdList from '../views/Recommendation';
 
@@ -55,18 +55,24 @@ const storeUserName=async(userId, name)=>{
 
 function manipulateRecomd(){
   const recomdContainer = document.querySelector('.recommendation-list');
-  getRecommendation().then(resp=>{
-    console.log(resp);
-    for (const item of resp) {
-      let coverart= item.images.background;
-      let title=item.title;
-      let artist =item.subtitle;
-      let prevUrl =item.url;
-      let printHtml=printRecomdList({coverart, title, artist, prevUrl});
-      recomdContainer.innerHTML+=printHtml;
-    }
-    document.querySelector('.carousel-item').classList.add('active')
-  }).catch(err=>{console.log(err)})
+   let songNames =['butter', 'Good 4 U', 'Levitating','Leave The Door Open'];
+
+   for (const name of songNames){
+     getData(name).then(data=>{
+       let firstItem =data[0];
+       let title =firstItem.title;
+       let artist =firstItem.artist.name;
+       let coverart =firstItem.album.cover_big;
+       let prevUrl=firstItem.preview;
+       let songId =firstItem.id;
+       let printHtml =printRecomdList({coverart, title,artist, prevUrl, songId})
+       recomdContainer.innerHTML+=printHtml;
+       if(!recomdContainer.children[0].classList.contains('active')){
+         recomdContainer.querySelector('.carousel-item').classList.add('active');
+         console.log('check status')
+       }
+     }).catch(err=>{console.log(err.message)})
+   }
 }
 export {storeUserName,getUserInfo, searchMusic, manipulateRecomd}
 

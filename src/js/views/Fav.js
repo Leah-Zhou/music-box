@@ -1,5 +1,5 @@
 const favMusic=`
- <section class="container fav-section">
+ <section class="container-lg fav-section">
   <h5>Your Fav Music</h5>
   <ul class="fav-list">   
   </ul>
