@@ -4,16 +4,21 @@
 .recomd-intro{
   position: absolute;
   bottom:2em;
-  margin:0 1em;
-  padding-left: 1.2em;
-  width: 90%;
-  color:white;
+  left:0;
+  // margin:0 1em;
+  width: 100%;
+  padding:1em 0;
+  color:black;
+  // @include imgBorder(40px);
   backdrop-filter: blur(5px);
-  // background:linear-gradient(to top, rgba(black, 0.6), rgba(black, 0.1));
+  background:linear-gradient(to right, rgba(white, 0.6), 20%, rgba(white, 0));
   z-index:3;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content:flex-start;
+  &>section{
+    margin:0 1em;
+  }
   P{
     margin-bottom: 0.7rem;
     font-weight: 600;
@@ -21,9 +26,21 @@
   }
 }
 .recomd-title{
-  font-size: clamp(17px, 2vw, 23px);
+  font-size: clamp(17px, 2vw, 26px);
 }
 .carousel-item{
+  background-size: cover;
+  &::before{
+    content: "";
+    position: absolute;
+    background-color: rgba(black, 0.4);
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    @include breakpoint('desktop'){
+     @include imgBorder(40px);
+    }
+  }
   &>img{
     padding:1em;
     @include imgBorder(40px);
@@ -33,19 +50,10 @@
     position: relative;
     // z-index: 3;
   }
-
-  // &::before{
-  //   content: "";
-  //   // border-radius: 40px;
-  //   position: absolute;
-  //   top:0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   z-index: 1;
-  //   background-color: rgba(white, 0.2);
-  //   backdrop-filter: blur(10px);
-  // }
+  @include breakpoint('desktop'){
+    // background: linear-gradient(45deg, $secondaryLight, $primary);
+    @include imgBorder(50px);
+  }
 }
 
 // .carousel-control-next, .carousel-control-prev {

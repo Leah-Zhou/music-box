@@ -3,6 +3,7 @@
 
 .song-list{
   height: 0;
+  margin-left: 1em;
   transition: height .3s ease-out;
 }
 .song-wraper{
@@ -111,25 +112,30 @@
   }
 }
 .fav-list{
-  padding-bottom: 60px;
-  padding-top:60px;
-  margin-left: 1em;
-  display: grid;
-  align-content: start;
-  transform: rotate(-90deg) translateY(-350px);
+ padding-top:2em;
+  transform: rotate(-90deg) translateY(-350px)translateX(0px);
   width: 280px;
+  max-height: 100vw;
   height: 100vw;
-  transform-origin: top right;
+  transform-origin: right top;
   overflow-y: scroll;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  @include breakpoint('desktop'){
+    max-height: calc(100vw - #{$navbarWidth});
+    transform: rotate(-90deg) translateY(-350px)translateX(30px);
+  }
   li{
     transform: rotate(90deg);
-    margin:4em;
+    transform-origin: center;
+    margin:1em;
+    min-height:$albumWidthS;
     @include breakpoint('desktop'){
       margin:0;
+      min-height:$albumWidthL;
     }
   }
 }
 ::-webkit-scrollbar{
-  width: 1px;
+  width: 20px;
 }

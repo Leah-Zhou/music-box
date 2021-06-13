@@ -2,7 +2,7 @@
  const printRecomdList =({coverart, title, artist,prevUrl, songId})=>{
 
   const recomdList =`
-        <div class="carousel-item">
+        <div class="carousel-item" style="background:url(${coverart}); background-size: cover;">
           <img src=${coverart} alt="${title}" class="d-block w-100 recomd-cover">
           <div class="recomd-intro">
             <section>

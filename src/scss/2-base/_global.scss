@@ -28,7 +28,7 @@ li{
   }
   @include breakpoint('desktop'){
     margin-left:$navbarWidth;
-    padding: 2em;
+    padding:1em 2em;
   }
 }
 %centerItem{

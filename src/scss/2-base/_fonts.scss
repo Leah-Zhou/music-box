@@ -3,6 +3,7 @@
 
 h5{
   color: $primary;
+  font-weight: 600;
   font-size: clamp(16px, 2vw, 18px) !important;
 }
 .greeting, h5{
