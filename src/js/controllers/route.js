@@ -1,17 +1,17 @@
 import Home from '../views/Home';
-import Search from '../views/Search';
+import Explore from '../views/Explore';
 
 
 
 async function getContent(hashId){
   const body=document.querySelector('body');
   const homePage =new Home('home');
-  const searchPage =new Search('search');
+  const explorePage =new Explore('explore');
 
   
   const contentViews={
     home: await homePage.getHtml(),
-    search: await searchPage.getHtml(),
+    explore: await explorePage.getHtml(),
   } 
   switch (hashId){
     case 'home':
@@ -19,9 +19,9 @@ async function getContent(hashId){
       await homePage.initControllers();
       break;
     
-    case 'search':
+    case 'explore':
       body.innerHTML=contentViews[hashId]; 
-      await searchPage.initControllers();
+      await explorePage.initControllers();
       break;
     
     default:

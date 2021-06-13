@@ -5,7 +5,7 @@ import {ToggleMenu, MoveSlider} from "../controllers/navigation";
 import Nav from './Nav';
 import favMusic from './Fav';
 
-export default class Search  {
+export default class Explore  {
   constructor(title){
     document.title=title
   }
@@ -37,7 +37,7 @@ export default class Search  {
      manipulateRecomd();
      MoveSlider();
      signOutUser();
-     searchMusic();
+    //  searchMusic();
      controlMusic(document.querySelector('.recommendation-list'));
      controlMusic(document.querySelector('.fav-section'));
      controlMusic(document.querySelector('.song-list'));

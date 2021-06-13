@@ -18,7 +18,8 @@ const MoveSlider=()=>{
 
   navSection.addEventListener('click', ()=>{
     if(navAccount.checked){
-      slider.style.top="33.3%"
+      slider.style.top="33.3%";
+      
     }else if(navExplore.checked){
       slider.style.top="0%"
     }else if(signOut.checked){

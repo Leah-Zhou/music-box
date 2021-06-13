@@ -72,7 +72,7 @@ const body=document.querySelector('body');
 const checkAuth = auth.onAuthStateChanged(
   (user)=>{
     if(user){
-      location.hash="#search"; 
+      location.hash="#explore"; 
       loadContent(); 
       getUserInfo(user.uid);
       fetchFav(user.uid);
