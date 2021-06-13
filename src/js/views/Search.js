@@ -14,25 +14,8 @@ export default class Search  {
    <div class="align-items-md-center content-wrap">
      ${Nav}
      <div class="box-style main-content">
-        <section>
-           <div class="top-section">
-              <section class="greeting">
-                <h1 class="container-lg">Welcome<span>&#44;</span><span class="current-user"></span>	&#33;</h1>
-              </section>
-             <section class="container-lg search-section">
-              <form class="search-form d-block">
-                <input type="text" name="songInfo" class="form-control my-3" placeholder="search by song name or artist"/>
-                <input type="submit" class="d-none" />
-              </form>
-            </section>
-           </div>
 
-      <section class="control-height">
-        <ul class="song-list">
-        </ul>
-      </section>
-      
-    </section>
+
       <section class="carousel slide" id="listControl">
         <h5 class="container-lg">Recommendation</h5>
        <div class="carousel-inner recommendation-list"></div>
@@ -61,3 +44,23 @@ export default class Search  {
      ToggleMenu();
    }
 }
+
+
+
+{/* <section>
+<div class="top-section">
+   <section class="greeting">
+     <h1 class="container-lg">Welcome<span>&#44;</span><span class="current-user"></span>	&#33;</h1>
+   </section>
+  <section class="container-lg search-section">
+   <form class="search-form d-block">
+     <input type="text" name="songInfo" class="form-control my-3" placeholder="search by song name or artist"/>
+     <input type="submit" class="d-none" />
+   </form>
+ </section>
+</div>
+<section class="control-height">
+<ul class="song-list">
+</ul>
+</section>   
+</section> */}

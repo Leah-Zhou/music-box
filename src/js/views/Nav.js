@@ -10,6 +10,9 @@ const Nav =
       </div>
   </nav>   
   <div class="navbar-nav">
+      <section class="greeting">
+      <h6 class="container-lg">Welcome<span>&#44;</span><span class="current-user"></span>	&#33;</h6>
+      </section>
     <ul>
     <li class="nav-fav"> 
       <input type="radio" name="nav-opt" id="nav-fav" checked />

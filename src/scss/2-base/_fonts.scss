@@ -2,9 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap');
 
 h5{
-  color: $primary;
-  font-weight: 600;
-  font-size: clamp(16px, 2vw, 18px) !important;
+  color: rgb(153, 70, 153);
+  font-weight: 700;
+  font-size: clamp(18px, 2vw, 21px) !important;
+}
+.greeting h6{
+  margin: 1em 1.8em;
+  font-size: 21px;
+  font-weight: 700;
 }
 .greeting, h5{
   font-family: 'Montserrat', sans-serif;

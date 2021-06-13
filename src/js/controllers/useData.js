@@ -1,4 +1,4 @@
-import {getData} from './fetchData';
+import {getData, getAlbum} from './fetchData';
 import printSongs from '../views/SongList';
 import printRecomdList from '../views/Recommendation';
 
@@ -73,6 +73,7 @@ function manipulateRecomd(){
        }
      })
    }
+
 }
 export {storeUserName,getUserInfo, searchMusic, manipulateRecomd}
 
