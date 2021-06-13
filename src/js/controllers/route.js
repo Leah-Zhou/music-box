@@ -12,8 +12,7 @@ async function getContent(hashId){
   const contentViews={
     home: await homePage.getHtml(),
     search: await searchPage.getHtml(),
-  }
-   
+  } 
   switch (hashId){
     case 'home':
       body.innerHTML=contentViews[hashId];

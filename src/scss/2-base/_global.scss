@@ -24,7 +24,7 @@ li{
 .main-content{
   align-items: center;
   &>section{
-    margin-bottom:2em;
+    margin-bottom:1.2em;
   }
   @include breakpoint('desktop'){
     margin-left:$navbarWidth;

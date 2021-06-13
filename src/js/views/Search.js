@@ -16,12 +16,11 @@ export default class Search  {
      <div class="box-style main-content">
         <section>
            <div class="top-section">
-              <section class="py-3 greeting">
+              <section class="greeting">
                 <h1 class="container-lg">Welcome<span>&#44;</span><span class="current-user"></span>	&#33;</h1>
               </section>
              <section class="container-lg search-section">
               <form class="search-form d-block">
-                <h5>Find Music You Like</h5>
                 <input type="text" name="songInfo" class="form-control my-3" placeholder="search by song name or artist"/>
                 <input type="submit" class="d-none" />
               </form>

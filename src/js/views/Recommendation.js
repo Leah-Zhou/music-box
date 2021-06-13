@@ -13,7 +13,7 @@
               <audio controls style="display:none" id="${songId}">
               <source src=${prevUrl} type="audio/ogg">
               </audio>
-              <i class="far fa-play-circle fa-3x play play-btn" data-id="${songId}"></i>
+              <i class="far fa-play-circle play play-btn prev-play" data-id="${songId}"></i>
             </section>
 
             </div>   

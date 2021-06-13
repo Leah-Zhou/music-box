@@ -26,8 +26,13 @@ import myKey from '../privacy/mykey';
         "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
     }
   })
-  const data= await request.json();
-   return data.data;
+   try{
+    console.log(request.status);
+    const data= await request.json();
+     return data.data;
+    }catch(err){
+      console.log(err.message)
+   }
 }
 
 

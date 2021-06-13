@@ -47,7 +47,7 @@ const storeUserName=async(userId, name)=>{
       getData(searchInput).then(data=>{
         console.log(data);
         printAllData(data);
-      }).catch(err=>{console.log(err)});
+      })
     }
     searchForm.reset();
   })
@@ -71,7 +71,7 @@ function manipulateRecomd(){
          recomdContainer.querySelector('.carousel-item').classList.add('active');
          console.log('check status')
        }
-     }).catch(err=>{console.log(err.message)})
+     })
    }
 }
 export {storeUserName,getUserInfo, searchMusic, manipulateRecomd}
