@@ -111,6 +111,9 @@
     max-height:calc(#{$albumHeightL} + 10vh); 
   }
 }
+.horizontal-scroll{
+  @extend .fav-list;
+}
 .fav-list{
   @include breakpoint('mobile'){
     margin-left: 0.2em;

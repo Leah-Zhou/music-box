@@ -33,7 +33,7 @@ const storeUserName=async(userId, name)=>{
        let print= printSongs({songSrc:group.preview, album:group.album.cover_medium, songId:group.id, songName:group.title_short, artist:group.artist.name});
        musicList.innerHTML+=print;
     }; 
-    musicList.classList.add('fav-list')  
+    musicList.classList.add('horizontal-scroll')  
   }
 
 

@@ -33,6 +33,9 @@
 }
 .carousel-item{
   background-size: cover;
+  @include breakpoint('desktop'){
+    @include imgBorder(50px);
+  }
   &::before{
     content: "";
     position: absolute;
@@ -44,20 +47,34 @@
      @include imgBorder(40px);
     }
   }
+}
+.dist{
   &>img{
     padding:1em;
     @include imgBorder(40px);
     max-height: 370px;
-    object-fit: contain;
+    max-width: 370px;
+    border-radius: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+    // object-fit: contain;
     object-position: center;
     position: relative;
-    // z-index: 3;
+    position: relative;
   }
-  @include breakpoint('desktop'){
-    @include imgBorder(50px);
+  &>section{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    z-index: 4;
+  }
+  i{
+    color:white;
+    opacity: 0.8;
+    font-size: 3em;
   }
 }
-
 // .carousel-control-next, .carousel-control-prev {
 //   z-index:3 !important;
 // }
