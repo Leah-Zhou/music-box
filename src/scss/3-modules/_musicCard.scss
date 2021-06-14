@@ -112,24 +112,38 @@
   }
 }
 .fav-list{
- padding-top:2em;
-  transform: rotate(-90deg) translateY(-350px)translateX(0px);
-  width: 280px;
-  max-height: 100vw;
-  height: 100vw;
-  transform-origin: right top;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
+  @include breakpoint('mobile'){
+    margin-left: 0.2em;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: auto;
+  }
+  @include breakpoint('tablet'){
+    margin-left: 2em;
+    padding-top:2em;
+    transform: rotate(-90deg) translateY(-350px)translateX(0px);
+    width: 280px;
+    max-height: 100vw;
+    height: 100vw;
+    transform-origin: right top;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
   @include breakpoint('desktop'){
     max-height: calc(100vw - #{$navbarWidth});
     transform: rotate(-90deg) translateY(-350px)translateX(30px);
   }
   li{
-    transform: rotate(90deg);
-    transform-origin: center;
-    margin:1em;
-    min-height:$albumWidthS;
+    @include breakpoint('mobile'){
+      flex: 0 0 auto;
+    }
+    @include breakpoint('tablet'){
+      transform: rotate(90deg);
+      transform-origin: center;
+      margin:1em;
+      min-height:$albumWidthS;
+    }
     @include breakpoint('desktop'){
       margin:0;
       min-height:$albumWidthL;
@@ -138,4 +152,19 @@
 }
 ::-webkit-scrollbar{
   width: 20px;
+}
+.track-list{
+  @extend .fav-list;
+  // li{
+  //  @include breakpoint('desktop'){
+  //   transform:rotate(90deg);
+  //  }
+  // }
+}
+.album-section{
+  width: 100vw;
+  max-height: 220px;
+  @include breakpoint('desktop'){
+    max-height: 250px;
+  }
 }

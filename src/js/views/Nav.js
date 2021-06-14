@@ -20,13 +20,6 @@ const Nav =
       <i class="fas fa-heart px-2"></i>
       Explore Music</label>
     </li>
-    <li  class="nav-account">
-      <input type="radio" name="nav-opt" id="nav-account"/>
-      <label for="nav-account">
-      <i class="fas fa-user px-2"></i>
-      Account Setting
-      </label>
-    </li>
     <li class="sign-out">
      <input type="radio" name="nav-opt" id="nav-out"/>
       <label for="nav-signout">
@@ -41,3 +34,10 @@ const Nav =
 
 export {Nav as default}
 
+{/* <li  class="nav-account">
+<input type="radio" name="nav-opt" id="nav-account"/>
+<label for="nav-account">
+<i class="fas fa-user px-2"></i>
+Account Setting
+</label>
+</li> */}

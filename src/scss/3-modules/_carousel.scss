@@ -47,7 +47,7 @@
   &>img{
     padding:1em;
     @include imgBorder(40px);
-    max-height: 500px;
+    max-height: 370px;
     object-fit: contain;
     object-position: center;
     position: relative;

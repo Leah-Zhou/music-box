@@ -1,6 +1,7 @@
-import {getData, getAlbum} from './fetchData';
+import {getData, getHotTracks} from './fetchData';
 import printSongs from '../views/SongList';
 import printRecomdList from '../views/Recommendation';
+import  printHotTracks  from '../views/TrackList';
 
 // manipulate user info data:
 const printName=(name)=>{
@@ -73,7 +74,21 @@ function manipulateRecomd(){
        }
      })
    }
-
 }
-export {storeUserName,getUserInfo, searchMusic, manipulateRecomd}
+
+function printHotTrackList(){
+  let hotTrack = document.querySelector('.track-list');
+  getHotTracks().then(data=>{
+    for(const item of data){
+      let title=item.title;
+      let artist=item.subtitle;
+      let coverart=item.images.coverart;
+      // let prevUrl=item.url;
+
+      hotTrack.innerHTML+=printHotTracks({coverart, title, artist});
+    }
+    console.log(data)
+  })
+}
+export {storeUserName,getUserInfo, searchMusic, manipulateRecomd, printHotTrackList}
 
