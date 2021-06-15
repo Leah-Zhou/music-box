@@ -4,11 +4,9 @@ import printSongs from '../views/SongList';
    db.collection("musicApp").where("currentUserId", "==", userId)
     .onSnapshot((querySnapshot) => {
       let favSection =document.querySelector('.fav-list'); 
-
       querySnapshot.docChanges().forEach(change=>{
            let songObj=change.doc.data();
            let {songSrc, album, songId, songName, artist, isFav}=songObj;
-           console.log('before filter', isFav);
 
            if(isFav){
             favSection.innerHTML+=printSongs({songSrc, album, songId, songName, artist, isFav});  
@@ -20,7 +18,7 @@ import printSongs from '../views/SongList';
               }
 
               let selectedNode =document.querySelectorAll(`[data-songId="${songId}"]`);
-              selectedNode.forEach(node=>{
+               selectedNode.forEach(node=>{
                 let favIconNode = node.querySelector('[data-fav]');
                 favIconNode.dataset.fav=false;
               })

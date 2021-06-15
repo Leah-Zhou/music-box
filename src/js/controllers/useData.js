@@ -28,9 +28,23 @@ const storeUserName=async(userId, name)=>{
 }
 
   function printAllData(allData){
-  const musicList =document.querySelector('.song-list');
+    const musicList =document.querySelector('.song-list');
+    let favSongIds=[];
+    let isFav;
+    let favList =document.querySelector('.fav-list'); 
+    let favChildren =favList.querySelectorAll('li');
+    console.log(favChildren);
+    favChildren.forEach(list=>{
+       favSongIds.push(Number(list.dataset.songid));
+    })
+
     for(const group of allData){
-       let print= printSongs({songSrc:group.preview, album:group.album.cover_medium, songId:group.id, songName:group.title_short, artist:group.artist.name, isFav:false});
+      if(favSongIds.includes(group.id)){
+        isFav=true;
+      }else{
+        isFav=false
+      }
+       let print= printSongs({songSrc:group.preview, album:group.album.cover_medium, songId:group.id, songName:group.title_short, artist:group.artist.name, isFav:isFav});
        musicList.innerHTML+=print;
     }; 
     musicList.classList.add('horizontal-scroll')  

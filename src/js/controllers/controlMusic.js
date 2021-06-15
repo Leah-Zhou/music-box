@@ -5,7 +5,9 @@ const stroeFavSongs=(favSongs)=>{
 }
 const deleteFavSongs=(delSongs)=>{
   db.collection('musicApp').doc(delSongs).update({isFav:false});
-  db.collection('musicApp').doc(delSongs).delete();
+  db.collection('musicApp').doc(delSongs).delete().then(()=>{
+    console.log('fav is delete')
+  }).catch(err=>{console.error('error happen, not delete fav yet')});
 }
 
 const selectFavs=(parent, fav)=>{
@@ -45,17 +47,13 @@ export default function controlMusic(musicContent){
      if(fav=='true'){    
       e.target.dataset.fav='false';
        let isFav=e.target.dataset.fav;
-      //  e.target.className="far fa-heart fa-2x my-1";
        selectFavs(parent, isFav);
-      //  console.log(isFav)
      }
     //  add fav
      else{
       e.target.dataset.fav='true';
        let isFav=e.target.dataset.fav;
-      //  e.target.className="fas fa-heart fa-2x my-1";
        selectFavs(parent, isFav);
-       console.log(isFav)
      }
    }
 
