@@ -1,36 +1,42 @@
+import { fetchFav } from "./favList";
 
 const stroeFavSongs=(favSongs)=>{
   db.collection('musicApp').doc(favSongs.songId).set(favSongs)
 }
 const deleteFavSongs=(delSongs)=>{
-  db.collection('musicApp').doc(delSongs.songId).delete();
+  db.collection('musicApp').doc(delSongs).update({isFav:false});
+  db.collection('musicApp').doc(delSongs).delete();
 }
 
 const selectFavs=(parent, fav)=>{
-  let songSrc = parent.querySelector('source').getAttribute('src');
-  let album=parent.querySelector('.cover').getAttribute('src');
-  let songId=parent.querySelector('.album-top').getAttribute('data-id')
-  let songName =parent.querySelector('.song-name').textContent;
-  let artist =parent.querySelector('.song-artist').textContent;
-  let currentUserId = auth.currentUser.uid
-  let favSongs={songSrc, album, songId, songName, artist, currentUserId};
+  // console.log(favSongs);
 
   if(fav=="true"){
-    stroeFavSongs(favSongs);
     // console.log(favSongs);
+    let songSrc = parent.querySelector('source').getAttribute('src');
+    let album=parent.querySelector('.cover').getAttribute('src');
+    let songId=parent.querySelector('.album-top').getAttribute('data-id')
+    let songName =parent.querySelector('.song-name').textContent;
+    let artist =parent.querySelector('.song-artist').textContent;
+    let isFav=fav;
+    let currentUserId = auth.currentUser.uid
+    let favSongs={songSrc, album, songId, songName, artist, currentUserId, isFav};
+
+    stroeFavSongs(favSongs);
   }
   else{
+    console.log('active delete')
+    let songId=parent.querySelector('.album-top').getAttribute('data-id');
     // console.log(favSongs);
-    deleteFavSongs(favSongs);
+    deleteFavSongs(songId);
+    
   }
 }
 
 
 
 export default function controlMusic(musicContent){
-  // const songList =document.querySelector('.song-list');
   let isSongPlay=false;
-
   musicContent.addEventListener('click', e=>{
    if(e.target.classList.contains('fa-heart')){
      let fav=e.target.dataset.fav;
@@ -39,15 +45,17 @@ export default function controlMusic(musicContent){
      if(fav=='true'){    
       e.target.dataset.fav='false';
        let isFav=e.target.dataset.fav;
-       e.target.className="far fa-heart fa-2x my-1";
+      //  e.target.className="far fa-heart fa-2x my-1";
        selectFavs(parent, isFav);
+      //  console.log(isFav)
      }
     //  add fav
      else{
       e.target.dataset.fav='true';
        let isFav=e.target.dataset.fav;
-       e.target.className="fas fa-heart fa-2x my-1";
-       selectFavs(parent, isFav)
+      //  e.target.className="fas fa-heart fa-2x my-1";
+       selectFavs(parent, isFav);
+       console.log(isFav)
      }
    }
 

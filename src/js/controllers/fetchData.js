@@ -12,8 +12,10 @@ import myKey from '../privacy/mykey';
   })
    try{
     console.log(request.status);
-    const data= await request.json();
-     return data.data;
+    if(request.status ==200){
+      const data= await request.json();
+      return data.data;
+    }
     }catch(err){
       console.log(err.message)
    }
@@ -28,8 +30,11 @@ export async function getHotTracks(){
     }
   })
 
-  try{const data=await request.json();
-    return data.tracks;
+  try{
+    if(request.status==200){
+      const data=await request.json();
+      return data.tracks;
+    }
   }catch(err){
     console.log(err.message)
  }

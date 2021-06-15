@@ -30,7 +30,7 @@ const storeUserName=async(userId, name)=>{
   function printAllData(allData){
   const musicList =document.querySelector('.song-list');
     for(const group of allData){
-       let print= printSongs({songSrc:group.preview, album:group.album.cover_medium, songId:group.id, songName:group.title_short, artist:group.artist.name});
+       let print= printSongs({songSrc:group.preview, album:group.album.cover_medium, songId:group.id, songName:group.title_short, artist:group.artist.name, isFav:false});
        musicList.innerHTML+=print;
     }; 
     musicList.classList.add('horizontal-scroll')  

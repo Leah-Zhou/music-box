@@ -29,10 +29,10 @@
 
 
 
-export default function printSongs({songSrc, album, songId, songName, artist}){
+export default function printSongs({songSrc, album, songId, songName, artist, isFav}){
   let printedHtml=
 `
-  <li class="text-center">
+  <li class="text-center" data-songId="${songId}">
    <div class="song-item card-style">
     <audio controls style="display:none" id="${songId}">
       <source src=${songSrc} type="audio/ogg">
@@ -48,7 +48,7 @@ export default function printSongs({songSrc, album, songId, songName, artist}){
          <p class="song-name px-1">${songName}</p>
          <p class="song-artist text-muted fs-6 px-1">${artist}</p>
       </div>
-      <i class="far fa-heart fa-2x my-1" data-fav="false"></i>
+      <i class="fas fa-heart fa-2x my-1" data-fav=${isFav} data-testId=${songId}></i>
     </div>
    </div>
   </li>

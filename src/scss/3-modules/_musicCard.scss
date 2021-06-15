@@ -94,8 +94,11 @@
   color: rgba(white, 0.9);
 }
 
- .fa-heart{
-  color:rgba($primary, 0.7) !important;
+ .fa-heart[data-fav=false]{
+  color:rgba(gray, 0.7) !important;
+}
+.fa-heart[data-fav=true]{
+  color:rgba(red, 0.7) !important;
 }
 .fa-2x{
    font-size: 1.5em;
@@ -168,6 +171,6 @@
   width: 100vw;
   max-height: 220px;
   @include breakpoint('desktop'){
-    max-height: 250px;
+    max-height: 270px;
   }
 }
