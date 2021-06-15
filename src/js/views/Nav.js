@@ -4,6 +4,7 @@ const Nav =
     <nav class="navbar navbar-expand-lg nav-bg d-lg-none" >
       <div class="navbar-brand logo">
         <img src="./imgs/logo.png" alt="logo" width="30px">
+        <p class="display-6">Music Box </p>
       </div>
       <div class="menu-icon">
         <i class="fas fa-ellipsis-v px-3"></i>
@@ -34,10 +35,3 @@ const Nav =
 
 export {Nav as default}
 
-{/* <li  class="nav-account">
-<input type="radio" name="nav-opt" id="nav-account"/>
-<label for="nav-account">
-<i class="fas fa-user px-2"></i>
-Account Setting
-</label>
-</li> */}

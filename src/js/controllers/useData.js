@@ -97,9 +97,9 @@ function printHotTrackList(){
       let title=item.title;
       let artist=item.subtitle;
       let coverart=item.images.coverart;
-      // let prevUrl=item.url;
+      let prevUrl=item.url;
 
-      hotTrack.innerHTML+=printHotTracks({coverart, title, artist});
+      hotTrack.innerHTML+=printHotTracks({coverart, title, artist, prevUrl});
     }
     console.log(data)
   })

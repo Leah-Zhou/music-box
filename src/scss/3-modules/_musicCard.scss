@@ -19,6 +19,11 @@
   width: $albumWidthS;
   height: $albumHeightS;
   margin:0.7em;
+  padding-right: 1em;
+  transition: transform .5s ease;
+  &:hover{
+    transform:scale(1.12);
+  }
   @include breakpoint('desktop'){
     height:$albumHeightL;
     width: $albumWidthL;
@@ -45,7 +50,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-radius:6px;
-  align-items: center;
+  padding-top:1em;
+  align-items: start;
   background-color: white;
   box-shadow: 3px 8px 16px rgba(gray, 0.2);
  @include breakpoint("desktop"){
@@ -60,19 +66,28 @@
   overflow: hidden;
 }
 .song-intro{
+  display: grid;
+  grid-auto-flow: row;
   @include breakpoint('desktop'){
     display: flex;
     justify-content: space-between;
     align-items: inherit;
   }
+  div{
+    margin:0.2em;
+  }
 }
 .song-name{
-  font-size: clamp(14px, 2vw, 15px);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 120px;
+  font-size: clamp(15px, 2vw, 16px);
   @extend %truncate;
   margin-block-end: 0px !important;
 }
 .song-artist{
-  font-size:0.7em !important;
+  font-size:0.8em !important;
   margin:0;
   @extend %truncate;
 }

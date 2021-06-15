@@ -32,7 +32,7 @@ export default class Explore  {
      </section>
 
       <section class="carousel slide" id="listControl">
-        <h5 class="container-lg">Recommendation</h5>
+        <h5 class="container-lg display-6">Recommendation</h5>
        <div class="carousel-inner recommendation-list"></div>
        <button class="carousel-control-prev" type="button" data-bs-target="#listControl" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -32,3 +32,27 @@
 .prev-play{
   font-size: 2.3em;
 }
+.more-btn{
+  position: absolute;
+  z-index: 5;
+  bottom:0;
+  right:-100%;
+  color:white;
+  width: 120px;
+  text-decoration: none;
+  padding:0.6em;
+  background:linear-gradient(to right bottom, $secondaryLight, $primary);
+  @include imgBorder(50px);
+  box-shadow: 3px 8px 16px rgba(gray, 0.2);
+  transition: transform 0.5s ease;
+  &:hover{
+    color:black;
+    transform:scale(1.2);
+  }
+  @include breakpoint('desktop'){
+    bottom: 1em;
+    left: 1em;
+    width: 60px;
+  }
+}
+

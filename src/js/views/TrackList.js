@@ -1,11 +1,12 @@
 
- const printHotTracks =({coverart, title, artist})=>{
+ const printHotTracks =({coverart, title, artist, prevUrl})=>{
 
   const recomdList =`
         <li class="text-center">
           <div class="song-item card-style">
-            <section>
+            <section class="track-cover">
               <img src=${coverart} alt="${title}" class="mx-2">
+              <a href=${prevUrl} targer="_blank" class="more-btn">More</a>
             </section>
             <section class="song-intro">
               <div>
