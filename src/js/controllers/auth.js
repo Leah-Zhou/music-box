@@ -3,6 +3,7 @@ import loadContent from './route';
 import {storeUserName, getUserInfo} from './useData';
 import{fetchFav} from './favList';
 
+
 // check validation of registation
 const regExPattern={
    username:/^([\w]{1,10})$/,
@@ -76,12 +77,14 @@ const checkAuth = auth.onAuthStateChanged(
       loadContent(); 
       getUserInfo(user.uid);
       fetchFav(user.uid);
-      body.style.height="100%"
+      body.style.height="100%";
+      body.className="white-bg" 
     }else{
       console.log('no user');
       location.hash="#home";
       loadContent(); 
-      body.style.height="100vh"
+      body.style.height="100vh";
+      body.className="pink-bg" 
     }
   }
 )

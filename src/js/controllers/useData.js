@@ -1,7 +1,7 @@
-import {getData, getHotTracks} from './fetchData';
+import {getData, getRadio} from './fetchData';
 import printSongs from '../views/SongList';
 import printRecomdList from '../views/Recommendation';
-import  printHotTracks  from '../views/TrackList';
+import  printEachRaido  from '../views/TrackList';
 
 // manipulate user info data:
 const printName=(name)=>{
@@ -68,10 +68,10 @@ const storeUserName=async(userId, name)=>{
   })
 } 
 
+
 function manipulateRecomd(){
   const recomdContainer = document.querySelector('.recommendation-list');
    let songNames =['butter', 'Good 4 U', 'Levitating','Leave The Door Open'];
-
    for (const name of songNames){
      getData(name).then(data=>{
        let firstItem =data[0];
@@ -84,25 +84,35 @@ function manipulateRecomd(){
        recomdContainer.innerHTML+=printHtml;
        if(!recomdContainer.children[0].classList.contains('active')){
          recomdContainer.querySelector('.carousel-item').classList.add('active');
-         console.log('check status')
        }
      })
-   }
+   }  
+
 }
 
-function printHotTrackList(){
+function printRaido(){
   let hotTrack = document.querySelector('.track-list');
-  getHotTracks().then(data=>{
-    for(const item of data){
-      let title=item.title;
-      let artist=item.subtitle;
-      let coverart=item.images.coverart;
-      let prevUrl=item.url;
+  let radioId =[39041, 30891,39051,42042,37645];
 
-      hotTrack.innerHTML+=printHotTracks({coverart, title, artist, prevUrl});
-    }
-    console.log(data)
-  })
+  for(const id of radioId){
+    getRadio(id).then(item=>{
+      let title=item.title;
+      let coverart=item.picture_big;
+      // let tracklist=item.tracklist;
+      hotTrack.innerHTML+=printEachRaido({coverart, title});
+    })
+  }
+  // getRadio().then(data=>{
+  //   for(const item of data){
+  //     let title=item.title;
+  //     let artist=item.subtitle;
+  //     let coverart=item.images.coverart;
+  //     let prevUrl=item.url;
+
+  //     hotTrack.innerHTML+=printHotTracks({coverart, title, artist, prevUrl});
+  //   }
+  //   console.log(data)
+  // })
 }
-export {storeUserName,getUserInfo, searchMusic, manipulateRecomd, printHotTrackList}
+export {storeUserName,getUserInfo, searchMusic, manipulateRecomd, printRaido}
 

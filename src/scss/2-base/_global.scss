@@ -8,7 +8,6 @@
 body{
   height: 100vh;
   // background-size: cover;
-  background: linear-gradient(to bottom right, $secondaryLight, $primary);
   position: relative;
 }
 ul{
@@ -30,6 +29,12 @@ li{
     margin-left:$navbarWidth;
     padding:1em 2em;
   }
+}
+.pink-bg{
+  background: linear-gradient(to bottom right, $secondaryLight, $primary);
+}
+.white-bg{
+  background: white;
 }
 %centerItem{
   display: grid;

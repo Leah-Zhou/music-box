@@ -25,7 +25,7 @@
    color:white;
    position: relative;
 }
-.form-control{
+input[type="email"], input[type="password"], input[name="username"]{
   border:none !important;
   background: rgba(255, 255, 255, 0.76);
 }

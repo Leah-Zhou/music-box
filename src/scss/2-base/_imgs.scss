@@ -14,13 +14,29 @@
 }
 .logo{
   display: flex;
-  align-items: baseline;  
+  align-items: center;  
   &>img{
     width: 35px;
     object-fit: contain;
     margin:0 0.5em;
   }
+  p{
+    margin-bottom: 0;
+  }
 }
 .track-cover{
   position: relative;
+  img{
+    width: 200px;
+    height: 200px;
+    margin-right: 1em;
+  }
+  h6{
+    position: absolute;
+    color:white;
+    font-size:18px;
+    top:50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+  }
 }

@@ -1,10 +1,11 @@
 import { signOutUser } from "../controllers/auth";
-import {searchMusic, manipulateRecomd, printHotTrackList} from '../controllers/useData';
+import {searchMusic, manipulateRecomd, printRaido} from '../controllers/useData';
 import controlMusic from '../controllers/controlMusic';
 import {ToggleMenu, MoveSlider} from "../controllers/navigation";
 import Nav from './Nav';
 import favMusic from './Fav';
 import album from './Album';
+
 
 
 export default class Explore  {
@@ -58,7 +59,9 @@ export default class Explore  {
      controlMusic(document.querySelector('.fav-section'));
      controlMusic(document.querySelector('.song-list'));
      ToggleMenu();
-     printHotTrackList();
+     printRaido()
+    //  printHotTrackList();
+
    }
 }
 

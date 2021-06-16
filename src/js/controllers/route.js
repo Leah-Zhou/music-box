@@ -2,7 +2,6 @@ import Home from '../views/Home';
 import Explore from '../views/Explore';
 
 
-
 async function getContent(hashId){
   const body=document.querySelector('body');
   const homePage =new Home('home');

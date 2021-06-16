@@ -52,6 +52,7 @@
 .nav-bg{
   color:white;
   padding: 0.5em;
+  background: linear-gradient(186.72deg, rgba(252, 154, 143, 0.8) 3.11%, rgba(191, 122, 180, 0.8) 106.43%);
 }
 .nav-slider{
   height: 55px;
@@ -60,10 +61,10 @@
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
   position: absolute;
-  top:0;
+  top:36%;
   right:0;
   z-index: -1;
-  box-shadow: -5px 8px 16px rgba(160, 160,160, 0.3);
+  box-shadow: -510px -8px 16px rgba(160, 160,160, 0.3);
   transition: all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
 }
 
