@@ -4,7 +4,7 @@
   max-width: 500px;
   height: auto;
   position: absolute;
-  top:120%;
+  top:0%;
   z-index: -1;
   left: 50%;
   transform: translateX(-50%);
@@ -22,21 +22,5 @@
   }
   p{
     margin-bottom: 0;
-  }
-}
-.track-cover{
-  position: relative;
-  img{
-    width: 200px;
-    height: 200px;
-    margin-right: 1em;
-  }
-  h6{
-    position: absolute;
-    color:white;
-    font-size:18px;
-    top:50%;
-    left: 50%;
-    transform:translate(-50%, -50%);
   }
 }

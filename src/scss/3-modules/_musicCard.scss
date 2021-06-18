@@ -42,7 +42,6 @@
 }
 .box-style{
   background-color: rgba(white, 0.95);
-  // background:linear-gradient(to bottom right, rgba(white, 0.7), rgba(white, 0.4));
   border-radius:13px;
   margin:0.7em 1.2em;
   overflow: hidden;
@@ -133,7 +132,12 @@
 .horizontal-scroll{
   @extend .fav-list;
 }
+.fav-section{
+  transform:translateY(-70px);
+}
 .fav-list{
+  overflow-y: scroll;
+  overflow-x: hidden;
   @include breakpoint('mobile'){
     margin-left: 0.2em;
     display: flex;
@@ -148,8 +152,6 @@
     max-height: 100vw;
     height: 100vw;
     transform-origin: right top;
-    overflow-y: scroll;
-    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
   }
   @include breakpoint('desktop'){
@@ -165,17 +167,18 @@
     @include breakpoint('tablet'){
       transform: rotate(90deg);
       transform-origin: center;
-      margin:1em;
       min-height:$albumWidthS;
     }
     @include breakpoint('desktop'){
-      margin:0;
       min-height:$albumWidthL;
     }
   }
 }
+ -moz-scorllbar{
+  width: 1px;
+}
 ::-webkit-scrollbar{
-  width: 20px;
+  width:1px;
 }
 .track-list{
   @extend .fav-list;
@@ -187,7 +190,7 @@
 }
 .album-section{
   width: 100vw;
-  max-height: 220px;
+  max-height: 230px;
   @include breakpoint('desktop'){
     max-height: 270px;
   }

@@ -17,6 +17,9 @@
     align-items: center;
     grid-template-columns: 1fr 1.2fr;
   }
+  .logo{
+    width:clamp(80px, 2vw, 100px);
+  }
 }
 .title{
    max-width: 500px;
@@ -24,6 +27,8 @@
    text-align: center;
    color:white;
    position: relative;
+   justify-items: center;
+   display: grid;
 }
 input[type="email"], input[type="password"], input[name="username"]{
   border:none !important;
