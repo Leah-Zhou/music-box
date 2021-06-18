@@ -23,11 +23,12 @@ const header =new Headers({
    }
 }
 
-export async function getRadio(radioId){
-  // console.log('init the getchart')
-  const request =await fetch(`https://deezerdevs-deezer.p.rapidapi.com/radio/${radioId}`, {
+
+export async function getRecomd(id){
+  console.log('init the getchart');
+  const request =await fetch(`https://deezerdevs-deezer.p.rapidapi.com/album/${id}`, {
     "method": "GET",
-    "headers": header
+    "headers": header,
   })
   try{
     if(request.ok){
@@ -39,38 +40,22 @@ export async function getRadio(radioId){
   }
 }
 
+ function getMyTest(){
+  fetch("https://shazam.p.rapidapi.com/songs/list-recommendations?key=484129036&locale=en-US", {
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-key": "4111ed95c3msh3376627ddef88cfp1d8704jsn3b4eacd45ef1",
+      "x-rapidapi-host": "shazam.p.rapidapi.com"
+    }
+  })
+  .then(response => {
+    console.log(response);
+  })
+  .catch(err => {
+    console.error(err);
+  });
+}
 
-// export async function getHotTracks(){
-//   const request=await fetch("https://shazam.p.rapidapi.com/songs/list-recommendations?key=484129036&locale=en-US", {
-//     "method": "GET",
-//     "headers": {
-//       "x-rapidapi-key": myKey,
-//       "x-rapidapi-host": "shazam.p.rapidapi.com"
-//     }
-//   })
-//   try{
-//     if(request.status==200){
-//       const data=await request.json();
-//       return data.tracks;
-//     }
-//   }catch(err){
-//     console.log(err.message)
-//  } 
-// }
+// getMyTest();
 
-// export async function getAlbum(albumId){   
-//   const request= await fetch(`https://deezerdevs-deezer.p.rapidapi.com/album/${albumId}`, {
-//     "method": "GET",
-//     "headers": {
-//         "x-rapidapi-key": myKey,
-//         "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
-//     }
-//   })
-//    try{
-//     console.log(request.status);
-//     const data= await request.json();
-//      return data;
-//     }catch(err){
-//       console.log(err.message)
-//    }
-// }
+

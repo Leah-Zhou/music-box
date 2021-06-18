@@ -3,62 +3,66 @@
 
 
 .track-container{
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: flex-start;
+   ul{
+    display: none;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+   }
   li{
     background-color:#f8f9fa;
-    padding:0.3em;
+    padding:1em;
     display: flex;
     flex-flow: row nowrap;
     align-items: flex-end;
-    justify-content: space-around;
+    justify-content: space-between;
     width:100%;
+  }
+  i{
+    color:$secondary;
+    font-size: 2em;
   }
 }
 .track-album{
  margin-top:1em;
+ @include breakpoint('mobile'){
+   margin-right: 1em;
+ }
+ margin-right: 0.8em;
 }
 .track-cover{
   position: relative;
-  &::after{
-    content:"";
-    position: absolute;
-    top:0;
-    left: 0;
-    z-index: 3;
-    background: rgba(black, 0.65);
-    height: 100%;
-    width: 100%;
-  }
-  img{
-    width: 200px;
-    height: 200px;
-  }
   div{
     position: absolute;
     color:white;
-    font-size:18px;
-    top:50%;
+    background:radial-gradient( rgba($secondaryLight, 0.5), rgba($secondary, 0.7));
+    font-size:16px;
+    top:90%;
     left: 50%;
     transform:translate(-50%, -50%);
     z-index: 5;
-    // width: 100%;
-    // height: 100%;
+    padding: 0.6em;
+    height: 70px;
+    @include imgBorder(10px);
+    backdrop-filter: blur(8px);
+    @extend %centerItem;
+    grid-auto-rows: min-content;
+    box-shadow: $bubbleShadow;
+    transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
+}
+.track-img{
+  width: 180px;
+  height: 180px;
+  transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  box-shadow: $albumShadow;
 }
 .track-active{
-  &::after{
-    content:"";
-    position: absolute;
-    top:0;
-    left: 0;
-    z-index: 3;
-    background: rgba(black, 0.01);
-    height: 100%;
-    width: 100%;
-  }
+  transform:scale(1.15);
+  margin: 1em;
+}
+.track-active+div{
+  top:80%;
 }
 .list-active{
-  display: flex;
+  display: flex !important;
 }

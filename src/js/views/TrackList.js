@@ -1,17 +1,30 @@
 
- const printEachRaido =({coverart, title})=>{
-
+ const printEachTrack =({coverart, title, artist})=>{
   const recomdList =`
-        <li class="text-center">
-          <div>
+        <li class="text-center track-album">
             <section class="track-cover">
-              <img src=${coverart} alt="${title}">
-              <h6 class="song-name px-1">${title}</h6>
+              <img src=${coverart} alt="${title}" class="track-img">
+               <div>
+                  <p class="song-name px-1">${title}</p>
+                  <p class="song-artist px-1">${artist}</p>
+               </div>
             </section>
-          </div>  
         </li>
 `
   return recomdList
 }
 
-export {printEachRaido as default}
+export const EachTrack =({song,songUrl, songId})=>{
+    const track=`
+     <li>
+       <p>${song}</p>
+        <audio controls style="display: none" id=${songId}>
+           <source src=${songUrl} type="audio/ogg">
+        </audio>
+        <i class="far fa-play-circle fa-3x play play-btn" data-id=${songId}></i>
+     </li>
+    `
+    return track
+}
+
+export {printEachTrack as default}

@@ -70,8 +70,7 @@
     z-index: 4;
   }
   i{
-    color:white;
-    opacity: 0.8;
+  @extend %playBtnStyle;
     font-size: 3em;
   }
 }

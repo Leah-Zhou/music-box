@@ -1,7 +1,7 @@
-import {getData, getRadio} from './fetchData';
+import {getData, getPlayList, getRecomd} from './fetchData';
 import printSongs from '../views/SongList';
 import printRecomdList from '../views/Recommendation';
-import  printEachRaido  from '../views/TrackList';
+import  printEachTrack, { EachTrack }  from '../views/TrackList';
 
 // manipulate user info data:
 const printName=(name)=>{
@@ -29,6 +29,7 @@ const storeUserName=async(userId, name)=>{
 
   function printAllData(allData){
     const musicList =document.querySelector('.song-list');
+    musicList.style.height="max-content";
     let favSongIds=[];
     let isFav;
     let favList =document.querySelector('.fav-list'); 
@@ -90,29 +91,40 @@ function manipulateRecomd(){
 
 }
 
-function printRaido(){
+function printRecomd(){
   let hotTrack = document.querySelector('.track-list');
-  let radioId =[39041, 30891,39051,42042,37645];
+  let trackContainer= document.querySelector('.track-container');
+  let recomdId =[226774542,167645582,192580092,233347232,41373501];
+  let isActive=false;
 
-  for(const id of radioId){
-    getRadio(id).then(item=>{
+  for(const id of recomdId){
+    getRecomd(id).then(item=>{
+      
       let title=item.title;
-      let coverart=item.picture_big;
-      // let tracklist=item.tracklist;
-      hotTrack.innerHTML+=printEachRaido({coverart, title});
+      let artist =item.artist.name;
+      let coverart=item.cover;
+      let tracklist=item.tracks.data.slice(0, 5);   
+      console.log(item)
+      let ul=document.createElement("ul");
+
+      tracklist.forEach(list=>{
+        let {song, songUrl,songId}={song:list.title, songUrl:list.preview, songId:list.id}
+
+        ul.innerHTML+=EachTrack({song, songUrl,songId});
+      })  
+      trackContainer.appendChild(ul);
+
+      hotTrack.innerHTML+=printEachTrack({coverart, title, artist});
+      if(!isActive){
+        let activeAlbum = hotTrack.querySelector('.track-img');
+        activeAlbum.classList.add('track-active');
+        // console.log(trackContainer.querySelector('ul'), trackContainer)
+        trackContainer.querySelector('ul').classList.add('list-active');
+        isActive=true;
+      }
     })
   }
-  // getRadio().then(data=>{
-  //   for(const item of data){
-  //     let title=item.title;
-  //     let artist=item.subtitle;
-  //     let coverart=item.images.coverart;
-  //     let prevUrl=item.url;
-
-  //     hotTrack.innerHTML+=printHotTracks({coverart, title, artist, prevUrl});
-  //   }
-  //   console.log(data)
-  // })
 }
-export {storeUserName,getUserInfo, searchMusic, manipulateRecomd, printRaido}
+
+export {storeUserName,getUserInfo, searchMusic, manipulateRecomd, printRecomd}
 

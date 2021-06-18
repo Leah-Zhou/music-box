@@ -26,4 +26,18 @@ const MoveSlider=()=>{
   })
 }
   
-export {ToggleMenu, MoveSlider}
+const trackNavigator=()=>{
+  let trackAlbum =document.querySelector('.track-list');
+  
+
+  trackAlbum.addEventListener('click', e=>{
+    console.log('target');
+    console.log(e.target);
+    if(e.target.classList.contains('track-img')){
+      let prevActive =trackAlbum.querySelector('.track-active');
+      prevActive.classList.remove('track-active');
+      e.target.classList.add('track-active');
+    }
+  })
+}
+export {ToggleMenu, MoveSlider, trackNavigator}
