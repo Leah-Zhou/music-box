@@ -1,9 +1,9 @@
 
- const printEachTrack =({coverart, title, artist})=>{
+ const printEachTrack =({coverart, title, artist,albumId})=>{
   const recomdList =`
         <li class="text-center track-album">
             <section class="track-cover">
-              <img src=${coverart} alt="${title}" class="track-img">
+              <img src=${coverart} alt="${title}" class="track-img" data-albumId=${albumId}>
                <div>
                   <p class="song-name px-1">${title}</p>
                   <p class="song-artist px-1">${artist}</p>

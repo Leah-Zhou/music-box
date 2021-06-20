@@ -2,6 +2,7 @@ import {getData, getPlayList, getRecomd} from './fetchData';
 import printSongs from '../views/SongList';
 import printRecomdList from '../views/Recommendation';
 import  printEachTrack, { EachTrack }  from '../views/TrackList';
+import horizontalScroll from './horizontalSrcoll';
 
 // manipulate user info data:
 const printName=(name)=>{
@@ -34,7 +35,6 @@ const storeUserName=async(userId, name)=>{
     let isFav;
     let favList =document.querySelector('.fav-list'); 
     let favChildren =favList.querySelectorAll('li');
-    console.log(favChildren);
     favChildren.forEach(list=>{
        favSongIds.push(Number(list.dataset.songid));
     })
@@ -48,7 +48,9 @@ const storeUserName=async(userId, name)=>{
        let print= printSongs({songSrc:group.preview, album:group.album.cover_medium, songId:group.id, songName:group.title_short, artist:group.artist.name, isFav:isFav});
        musicList.innerHTML+=print;
     }; 
-    musicList.classList.add('horizontal-scroll')  
+    horizontalScroll(favList);
+    horizontalScroll(musicList);
+    // musicList.classList.add('horizontal-scroll')  
   }
 
 
@@ -103,27 +105,27 @@ function printRecomd(){
       let title=item.title;
       let artist =item.artist.name;
       let coverart=item.cover;
-      let tracklist=item.tracks.data.slice(0, 5);   
-      console.log(item)
+      let tracklist=item.tracks.data.slice(0, 5);  
+      let albumId=item.id; 
+
       let ul=document.createElement("ul");
+      ul.id=albumId;
 
       tracklist.forEach(list=>{
         let {song, songUrl,songId}={song:list.title, songUrl:list.preview, songId:list.id}
-
         ul.innerHTML+=EachTrack({song, songUrl,songId});
       })  
       trackContainer.appendChild(ul);
-
-      hotTrack.innerHTML+=printEachTrack({coverart, title, artist});
+      hotTrack.innerHTML+=printEachTrack({coverart, title, artist, albumId});
       if(!isActive){
         let activeAlbum = hotTrack.querySelector('.track-img');
         activeAlbum.classList.add('track-active');
-        // console.log(trackContainer.querySelector('ul'), trackContainer)
         trackContainer.querySelector('ul').classList.add('list-active');
         isActive=true;
       }
     })
   }
+  horizontalScroll(hotTrack);
 }
 
 export {storeUserName,getUserInfo, searchMusic, manipulateRecomd, printRecomd}

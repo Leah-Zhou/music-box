@@ -25,19 +25,23 @@ const MoveSlider=()=>{
     }
   })
 }
-  
-const trackNavigator=()=>{
-  let trackAlbum =document.querySelector('.track-list');
-  
+ 
+const switchPalyList=(id)=>{
+  let prevList =document.querySelector('.list-active');
+  prevList.classList.remove('list-active');
+  let albumId=id;
+  let currentList =document.getElementById(albumId);
+  currentList.classList.add('list-active');
+}
 
-  trackAlbum.addEventListener('click', e=>{
-    console.log('target');
-    console.log(e.target);
-    if(e.target.classList.contains('track-img')){
-      let prevActive =trackAlbum.querySelector('.track-active');
-      prevActive.classList.remove('track-active');
-      e.target.classList.add('track-active');
-    }
-  })
+const trackNavigator=()=>{
+    let trackAlbum =document.querySelector('.track-list');
+    trackAlbum.addEventListener('click', e=>{
+      if(e.target.classList.contains('track-img')){
+        trackAlbum.querySelector('.track-active').classList.remove('track-active');
+        e.target.classList.add('track-active');     
+        switchPalyList(e.target.dataset.albumid);
+      }
+    })
 }
 export {ToggleMenu, MoveSlider, trackNavigator}

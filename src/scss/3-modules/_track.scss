@@ -22,32 +22,22 @@
     font-size: 2em;
   }
 }
+.track-list{
+ @extend %flexInRow;
+ height: 280px;
+}
 .track-album{
- margin-top:1em;
- @include breakpoint('mobile'){
-   margin-right: 1em;
- }
- margin-right: 0.8em;
+  margin-right:1em;
 }
 .track-cover{
   position: relative;
   div{
-    position: absolute;
-    color:white;
-    background:radial-gradient( rgba($secondaryLight, 0.5), rgba($secondary, 0.7));
     font-size:16px;
-    top:90%;
-    left: 50%;
-    transform:translate(-50%, -50%);
     z-index: 5;
     padding: 0.6em;
-    height: 70px;
-    @include imgBorder(10px);
-    backdrop-filter: blur(8px);
     @extend %centerItem;
     grid-auto-rows: min-content;
     box-shadow: $bubbleShadow;
-    transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 }
 .track-img{
@@ -59,9 +49,6 @@
 .track-active{
   transform:scale(1.15);
   margin: 1em;
-}
-.track-active+div{
-  top:80%;
 }
 .list-active{
   display: flex !important;

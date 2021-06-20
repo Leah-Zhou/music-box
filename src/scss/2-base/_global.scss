@@ -36,6 +36,13 @@ li{
 .white-bg{
   background: white;
 }
+%flexInRow{
+  display: flex;
+  flex-flow: row nowrap;
+  overflow:auto;
+  align-items: center;
+  overflow-y: hidden;
+}
 %centerItem{
   display: grid;
   justify-items: center;

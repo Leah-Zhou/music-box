@@ -5,6 +5,7 @@
   height: 0;
   margin-left: 1em;
   transition: height .3s ease-out;
+  @extend %flexInRow;
 }
 .song-wraper{
   grid-template-columns: 1fr;
@@ -21,9 +22,9 @@
   margin:0.7em;
   padding-right: 1em;
   transition: transform .5s ease;
-  &:hover{
-    transform:scale(1.12);
-  }
+  // &:hover{
+  //   transform:scale(1.12);
+  // }
   @include breakpoint('desktop'){
     height:$albumHeightL;
     width: $albumWidthL;
@@ -129,70 +130,59 @@
     max-height:calc(#{$albumHeightL} + 10vh); 
   }
 }
-.fav-section{
-  @include breakpoint('desktop'){
-    transform:translateY(-70px);
-  }
-}
+// .fav-section{
+//   @include breakpoint('desktop'){
+//     transform:translateY(-70px);
+//   }
+// }
 .fav-list{
-  overflow-y: scroll;
-  overflow-x: hidden;
-  @include breakpoint('mobile'){
-    margin-left: 0.2em;
-    display: flex;
-    flex-wrap: nowrap;
-    overflow: auto;
-  }
-  @include breakpoint('tablet'){
-    margin-left: 2em;
-    padding-top:2em;
-    transform: rotate(-90deg) translateY(-350px)translateX(0px);
-    width: 280px;
-    max-height: 100vw;
-    height: 100vw;
-    transform-origin: right top;
-    -webkit-overflow-scrolling: touch;
-  }
-  @include breakpoint('desktop'){
-    max-height: calc(100vw - #{$navbarWidth});
-    transform: rotate(-90deg) translateY(-350px)translateX(30px);
-    max-height: 100vw;
-    height: 100vw;
-  }
-  li{
-    @include breakpoint('mobile'){
-      flex: 0 0 auto;
-    }
-    @include breakpoint('tablet'){
-      transform: rotate(90deg);
-      transform-origin: center;
-      min-height:$albumWidthS;
-    }
-    @include breakpoint('desktop'){
-      min-height:$albumWidthL;
-    }
-  }
+  @extend %flexInRow;
 }
-.horizontal-scroll{
-  @extend .fav-list;
-}
+// .fav-list{
+//   overflow-y: scroll;
+//   overflow-x: hidden;
+//   @include breakpoint('mobile'){
+//     margin-left: 0.2em;
+//     display: flex;
+//     flex-wrap: nowrap;
+//     overflow: auto;
+//   }
+//   @include breakpoint('tablet'){
+//     margin-left: 2em;
+//     padding-top:2em;
+//     transform: rotate(-90deg) translateY(-350px)translateX(0px);
+//     width: 280px;
+//     max-height: 100vw;
+//     height: 100vw;
+//     transform-origin: right top;
+//     -webkit-overflow-scrolling: touch;
+//   }
+//   @include breakpoint('desktop'){
+//     max-height: calc(100vw - #{$navbarWidth});
+//     transform: rotate(-90deg) translateY(-350px)translateX(30px);
+//     max-height: 100vw;
+//     height: 100vw;
+//   }
+//   li{
+//     @include breakpoint('mobile'){
+//       flex: 0 0 auto;
+//     }
+//     @include breakpoint('tablet'){
+//       transform: rotate(90deg);
+//       transform-origin: center;
+//       min-height:$albumWidthS;
+//     }
+//     @include breakpoint('desktop'){
+//       min-height:$albumWidthL;
+//     }
+//   }
+// }
+// .horizontal-scroll{
+//   @extend .fav-list;
+// }
  -moz-scorllbar{
   width: 1px;
 }
 ::-webkit-scrollbar{
   width:1px;
-}
-.track-list{
-  @extend .fav-list;
-}
-.album-section{
-  width: 100vw;
-  max-height: 230px;
-  @include breakpoint('desktop'){
-    max-height: 270px;
-  }
-}
-
-.container-lg{
-  padding-left: 0 !important;
 }
