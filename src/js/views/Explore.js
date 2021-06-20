@@ -19,7 +19,7 @@ export default class Explore  {
      ${Nav}
      <div class="box-style main-content">
 
-     <section>
+     <div>
           <section class="container-lg search-section">
             <form class="search-form d-block">
               <input type="text" name="songInfo" class="form-control my-3" placeholder="search by song name or artist"/>
@@ -28,10 +28,13 @@ export default class Explore  {
           </section>
 
         <section class="control-height">
-        <ul class="song-list">
-        </ul>
+          <button class="expand-btn">
+              <i class="fas fa-times fa-2x"></i>
+          </button>
+          <ul class="song-list">
+          </ul>
         </section>   
-     </section>
+     </div>
 
       <section class="carousel slide" id="listControl">
         <h5 class="container-lg display-6">Recommendation</h5>
