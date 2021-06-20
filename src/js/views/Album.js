@@ -2,13 +2,13 @@ import {EachTrack} from './TrackList';
 
 
 const album =`
-<section>
+<div>
 <h5 class="display-6">Popular Album</h5>
 <ul class="track-list">
 </ul>
-</section>
+</div>
 <section class="track-container">
-<p class="container">Songs Preview</p>
+<p>Songs Preview</p>
 </section>
 `;
 

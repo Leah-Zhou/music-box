@@ -1,8 +1,9 @@
-import {getData, getPlayList, getRecomd} from './fetchData';
+import {getData, getRecomd} from './fetchData';
 import printSongs from '../views/SongList';
 import printRecomdList from '../views/Recommendation';
 import  printEachTrack, { EachTrack }  from '../views/TrackList';
 import horizontalScroll from './horizontalSrcoll';
+
 
 // manipulate user info data:
 const printName=(name)=>{
@@ -23,22 +24,21 @@ const storeUserName=async(userId, name)=>{
 }
 
 // manipulate aysnc music data:
- function cleanList(){
+function cleanList(){
   const songList =document.querySelector('.song-list');
   songList.innerHTML='';
 }
 
   function printAllData(allData){
-    const musicList =document.querySelector('.song-list');
-    musicList.style.height="max-content";
-    let favSongIds=[];
+    const songList =document.querySelector('.song-list');
+    const favList =document.querySelector('.fav-list'); 
+    const favChildren =favList.querySelectorAll('li');
+    const favSongIds=[];
     let isFav;
-    let favList =document.querySelector('.fav-list'); 
-    let favChildren =favList.querySelectorAll('li');
     favChildren.forEach(list=>{
        favSongIds.push(Number(list.dataset.songid));
     })
-
+    songList.classList.add('adjust-height');
     for(const group of allData){
       if(favSongIds.includes(group.id)){
         isFav=true;
@@ -46,11 +46,17 @@ const storeUserName=async(userId, name)=>{
         isFav=false
       }
        let print= printSongs({songSrc:group.preview, album:group.album.cover_medium, songId:group.id, songName:group.title_short, artist:group.artist.name, isFav:isFav});
-       musicList.innerHTML+=print;
+       songList.innerHTML+=print;
     }; 
+    let expandBtn=document.querySelector('.expand-btn');
+    expandBtn.style.display="block";
+    expandBtn.addEventListener('click', function(){
+      cleanList();
+      songList.classList.remove('adjust-height');
+      expandBtn.style.display="none";
+    })
     horizontalScroll(favList);
-    horizontalScroll(musicList);
-    // musicList.classList.add('horizontal-scroll')  
+    horizontalScroll(songList);
   }
 
 
@@ -61,10 +67,11 @@ const storeUserName=async(userId, name)=>{
     const searchInput =searchForm.songInfo.value.trim().toLowerCase(); 
     if(searchInput){
       cleanList();
-      // console.log(searchInput)
+      const songList =document.querySelector('.song-list');
       getData(searchInput).then(data=>{
         console.log(data);
         printAllData(data);
+        songList.classList.add('adjust-height');
       })
     }
     searchForm.reset();
@@ -96,7 +103,7 @@ function manipulateRecomd(){
 function printRecomd(){
   let hotTrack = document.querySelector('.track-list');
   let trackContainer= document.querySelector('.track-container');
-  let recomdId =[226774542,167645582,192580092,233347232,41373501];
+  let recomdId =[226774542,167645582,192580092,233347232,41373501,205117222];
   let isActive=false;
 
   for(const id of recomdId){

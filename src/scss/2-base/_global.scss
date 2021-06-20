@@ -39,8 +39,7 @@ li{
 %flexInRow{
   display: flex;
   flex-flow: row nowrap;
-  overflow:auto;
-  align-items: center;
+  overflow:visible;
   overflow-y: hidden;
 }
 %centerItem{
