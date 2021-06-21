@@ -8,7 +8,7 @@ export default class Home{
   }
    async getHtml(){
     return `
-    <div class="home-wraper">
+    <div class="home-wrapper">
       <section class="title">
         <img src="imgs/logo.png" alt="music box logo" class="logo animate-title">
         <h1 class="display-2 animate-title">MUSIC BOX</h1>

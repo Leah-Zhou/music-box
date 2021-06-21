@@ -2,13 +2,14 @@
 @import "../2-base/base";
 
 // register and sign in form
-.home-wraper{
+.home-wrapper{
   display: grid;
   justify-content: center;
   align-items: center;
   max-width: 1100px;
   justify-items: center;
   margin: 0 auto;
+
   @include breakpoint('desktop'){
     margin-top:80px;
     position: absolute;

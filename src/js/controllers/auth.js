@@ -78,7 +78,7 @@ const checkAuth = auth.onAuthStateChanged(
       getUserInfo(user.uid);
       fetchFav(user.uid);
       body.style.height="100%";
-      body.className="white-bg" 
+      body.className="white-bg" ;
     }else{
       console.log('no user');
       location.hash="#home";

@@ -14,7 +14,7 @@ const header =new Headers({
   })
    try{
     // console.log(request.status);
-    if(request.ok){
+    if(request.status==200){
       const data= await request.json();
       return data.data;
     }else( console.log('respond is missing'))
@@ -31,7 +31,7 @@ export async function getRecomd(id){
     "headers": header,
   })
   try{
-    if(request.ok){
+    if(request.status==200){
       const data =await request.json();
       return data;
     }
@@ -40,22 +40,5 @@ export async function getRecomd(id){
   }
 }
 
- function getMyTest(){
-  fetch("https://shazam.p.rapidapi.com/songs/list-recommendations?key=484129036&locale=en-US", {
-    "method": "GET",
-    "headers": {
-      "x-rapidapi-key": "4111ed95c3msh3376627ddef88cfp1d8704jsn3b4eacd45ef1",
-      "x-rapidapi-host": "shazam.p.rapidapi.com"
-    }
-  })
-  .then(response => {
-    console.log(response);
-  })
-  .catch(err => {
-    console.error(err);
-  });
-}
-
-// getMyTest();
 
 

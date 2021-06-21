@@ -9,6 +9,7 @@ body{
   height: 100vh;
   // background-size: cover;
   position: relative;
+  scrollbar-width: none;
 }
 ul{
   padding: 0;
@@ -35,6 +36,27 @@ li{
 }
 .white-bg{
   background: white;
+}
+@keyframes fadeOut{
+  from{
+    transform:translate(0%, 0%)
+  }
+  to{
+    transform:translate(-150%, -150%)
+  }
+}
+.content-wrap::before{
+  content:"";
+  position: absolute;
+  top:-10%;
+  left: -50%;
+  width: 200vw;
+  height: 200vh;
+  z-index: 20;
+  border-radius: 1000px;
+  transform-origin: top right;
+  background: linear-gradient(186.72deg, rgb(252, 154, 143) 3.11%, rgb(191, 122, 180) 106.43%);
+  animation: fadeOut 1.6s 0.5s forwards ease-out;
 }
 %flexInRow{
   display: flex;

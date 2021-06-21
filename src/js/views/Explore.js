@@ -18,7 +18,6 @@ export default class Explore  {
    <div class="align-items-md-center content-wrap">
      ${Nav}
      <div class="box-style main-content">
-
      <div>
           <section class="container-lg search-section">
             <form class="search-form d-block">

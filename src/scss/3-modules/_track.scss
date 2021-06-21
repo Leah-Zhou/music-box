@@ -46,6 +46,7 @@
  @extend %flexInRow;
  height: 280px;
  align-items: center;
+ scrollbar-width: none;
  li{
   margin-right: 2em;
 }
