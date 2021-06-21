@@ -8,6 +8,9 @@
   @extend %flexInRow;
   justify-items: end;
   align-items: flex-start;
+  li{
+    margin-right: 1.5em;
+  }
 }
 .adjust-height{
   height:$horizontalListHeight;
@@ -25,7 +28,7 @@
   width: $albumWidthS;
   height: $albumHeightS;
   margin:0.7em;
-  padding-right: 1em;
+  padding-right: 1.3em;
   transition: transform .5s ease;
   &:hover{
     transform:scale(1.12);
@@ -140,6 +143,9 @@
   @extend %flexInRow;
   height: $horizontalListHeight;
   align-items: flex-start;
+  li{
+    margin-right: 1.5em;
+  }
 }
  -moz-scorllbar{
   width: 1px;

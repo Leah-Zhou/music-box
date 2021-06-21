@@ -11,7 +11,7 @@ export default function printSongs({songSrc, album, songId, songName, artist, is
       <img src=${album} alt="cover of ${songName}" class="cover my-1">
       <div class="album-top play"  data-id="${songId}">
       </div>
-      <i class="far fa-play-circle fa-3x play play-btn" data-id=${songId}></i>
+      <i class="fas fa-play-circle fa-3x play play-btn" data-id=${songId}></i>
     </div>
     <div class="song-intro"> 
       <div>

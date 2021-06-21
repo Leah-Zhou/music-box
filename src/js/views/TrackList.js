@@ -1,7 +1,7 @@
 
  const printEachTrack =({coverart, title, artist,albumId})=>{
   const recomdList =`
-        <li class="text-center track-album">
+        <li class="text-center">
             <section class="track-cover">
               <img src=${coverart} alt="${title}" class="track-img" data-albumId=${albumId}>
                <div>
@@ -21,7 +21,7 @@ export const EachTrack =({song,songUrl, songId})=>{
         <audio controls style="display: none" id=${songId}>
            <source src=${songUrl} type="audio/ogg">
         </audio>
-        <i class="far fa-play-circle fa-3x play play-btn" data-id=${songId}></i>
+        <i class="fas fa-play-circle fa-3x play play-btn" data-id=${songId}></i>
      </li>
     `
     return track

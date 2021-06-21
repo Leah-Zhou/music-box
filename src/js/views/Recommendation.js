@@ -2,14 +2,14 @@
  const printRecomdList =({coverart, title, artist,prevUrl, songId})=>{
 
   const recomdList =`
-        <div class="carousel-item" style="background:url(${coverart}); background-size: cover;">
+        <div class="carousel-item" style="background:url(${coverart}); background-size: contain;">
          <div class="dist">
           <img src=${coverart} alt="${title}" class="d-block w-100 recomd-cover">
             <section>
             <audio controls style="display:none" id="${songId}">
             <source src=${prevUrl} type="audio/ogg">
             </audio>
-            <i class="far fa-play-circle play play-btn prev-play" data-id="${songId}"></i>
+            <i class="fas fa-play-circle play play-btn prev-play" data-id="${songId}"></i>
           </section>
          </div>
           <div class="recomd-intro">
@@ -24,3 +24,5 @@
 }
 
 export {printRecomdList as default}
+
+// style="background:url(${coverart}); background-size: cover;"

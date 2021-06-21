@@ -1,11 +1,21 @@
 @import "../1-helpers/helpers";
 @import "../2-base/base";
 
-
+.album-wrapper{
+  background-color:#f2f2f2;
+  box-shadow: 10px 5px 20px rgba(gray, 0.35);
+  padding: 1em;
+  border-radius: 15px;
+}
 .track-container{
+  background-color:rgba(white, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
   &>p{
-    background: $secondary;
-    color:white;
+    // background: linear-gradient(186.72deg, rgba(252, 154, 143, 0.8) 3.11%, rgba(191, 122, 180, 0.8) 106.43%);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color:gray;
     display: block;
     padding:1em 2em 1em 1em;
     margin-bottom: 0 !important;
@@ -18,14 +28,14 @@
     align-items: flex-start;
    }
   li{
-    background-color:#f8f9fa;
+    // background-color:#f8f9fa;
     padding:1em;
     display: flex;
     flex-flow: row nowrap;
     align-items: flex-end;
     justify-content: space-between;
     width:100%;
-    border-bottom: 0.6px solid rgb(185, 185, 185);
+    // border-bottom: 0.6px solid rgb(185, 185, 185);
   }
   i{
     color:$secondary;
@@ -36,9 +46,9 @@
  @extend %flexInRow;
  height: 280px;
  align-items: center;
+ li{
+  margin-right: 2em;
 }
-.track-album{
-  margin-right:1em;
 }
 .track-cover{
   position: relative;
@@ -52,13 +62,14 @@
   }
 }
 .track-img{
-  width: 180px;
-  height: 180px;
+  width: $recomdCoverSize;
+  height: $recomdCoverSize;
+  @include imgBorder(10px);
   transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
   box-shadow: $albumShadow;
 }
 .track-active{
-  transform:scale(1.15);
+  transform:scale(1.2);
   margin: 1em;
 }
 .list-active{
