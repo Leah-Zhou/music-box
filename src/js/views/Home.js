@@ -1,5 +1,6 @@
 import {loginCtrl, signupCtrl}from '../controllers/formSwitcher.js';
 import {signInUser, signUpUser}from '../controllers/auth.js';
+import { homeAnimation } from '../controllers/animation.js';
 
 export default class Home{
   constructor(title){
@@ -9,9 +10,9 @@ export default class Home{
     return `
     <div class="home-wraper">
       <section class="title">
-        <img src="imgs/logo.png" alt="music box logo" class="logo">
-        <h1 class="display-2">MUSIC BOX</h1>
-        <p>FIND YOUR LOVED MUSIC</p>
+        <img src="imgs/logo.png" alt="music box logo" class="logo animate-title">
+        <h1 class="display-2 animate-title">MUSIC BOX</h1>
+        <p class="animate-title">FIND YOUR LOVED MUSIC</p>
         <img src="imgs/hero-img.png" alt="hero" class="hero-img"> 
       </section>
       <section class="d-grid form-wrap">
@@ -62,5 +63,6 @@ export default class Home{
     signupCtrl();
     signInUser();
     signUpUser();
+    homeAnimation();
   }
 }

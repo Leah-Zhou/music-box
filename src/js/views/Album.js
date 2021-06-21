@@ -1,5 +1,3 @@
-import {EachTrack} from './TrackList';
-
 
 const album =`
 <section class="album-wrapper">

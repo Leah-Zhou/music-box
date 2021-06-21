@@ -4,12 +4,13 @@
   max-width: 500px;
   height: auto;
   position: absolute;
-  top:0%;
   z-index: -1;
   left: 50%;
+  top:200%;
   transform: translateX(-50%);
   @include breakpoint('desktop'){
     position: relative;
+    top:0%;
   }
 }
 .logo{
