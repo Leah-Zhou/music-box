@@ -68,9 +68,11 @@ function cleanList(){
     if(searchInput){
       cleanList();
       const songList =document.querySelector('.song-list');
+      const searchHint =document.querySelector('.search-hint');
+      searchHint.classList.add('show-search-hint');
       getData(searchInput).then(data=>{
-        console.log(data);
         printAllData(data);
+        searchHint.classList.remove('show-search-hint');
         songList.classList.add('adjust-height');
       })
     }

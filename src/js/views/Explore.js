@@ -24,6 +24,10 @@ export default class Explore  {
               <input type="text" name="songInfo" class="form-control my-3" placeholder="search by song name or artist"/>
               <input type="submit" class="d-none" />
             </form>
+            <div class="search-hint">
+              <img src="./imgs/loading-ball.svg" alt="loading ball" width="50px"/>
+              <p>music is on the way</p>
+            </div>
           </section>
 
         <section class="control-height">

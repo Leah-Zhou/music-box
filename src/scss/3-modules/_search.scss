@@ -42,6 +42,19 @@
   border-color:$secondaryLight;
   box-shadow: inset 0 1px 1px rgba($secondaryLight, 0.075), 0 0 8px rgba($primary, 0.3);
 }
+.search-hint{
+  display: flex;
+  flex-direction: row;
+  height: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all .6s ease;
+}
+.show-search-hint{
+  height: auto;
+  transform: translateY(0);
+  opacity: 1;
+}
 // .carousel-control-prev, .carousel-control-next{
 //   background-color: rgba(gray, 0.6);
 // }

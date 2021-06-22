@@ -5,6 +5,7 @@
   height: 0;
   margin-left: 1em;
   transition: height .3s ease-out;
+  scrollbar-width:none;
   @extend %flexInRow;
   justify-items: end;
   align-items: flex-start;
