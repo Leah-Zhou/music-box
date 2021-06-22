@@ -1,4 +1,5 @@
 
+// page transition
 const homeAnimation=()=>{
   const tl=gsap.timeline();
   
@@ -19,4 +20,12 @@ const exploreEnter=()=>{
 
   tl.fromTo('body', {x:2000}, {x:0, duration:1, ease:"power4.in"})
 }
-export {homeAnimation, homeLeave, exploreEnter};
+
+// object animation
+const floatIn=()=>{
+  gsap.fromTo('.song-list li', {opacity:0, y:15}, {opacity:1, y:0, ease:"power2.inout", duration:1, delay:0.05})
+}
+const floatOut=()=>{
+  gsap.to('.song-list li', {opacity:0, y:15, ease:"power2.inout", duration:1})
+}
+export {homeAnimation, homeLeave, exploreEnter, floatIn, floatOut};

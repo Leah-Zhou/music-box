@@ -3,6 +3,7 @@ import printSongs from '../views/SongList';
 import printRecomdList from '../views/Recommendation';
 import  printEachTrack, { EachTrack }  from '../views/TrackList';
 import horizontalScroll from './horizontalSrcoll';
+import { floatIn,floatOut} from './animation';
 
 
 // manipulate user info data:
@@ -52,6 +53,7 @@ function cleanList(){
     expandBtn.style.display="block";
     expandBtn.addEventListener('click', function(){
       cleanList();
+      floatOut();
       songList.classList.remove('adjust-height');
       expandBtn.style.display="none";
     })
@@ -74,6 +76,7 @@ function cleanList(){
         printAllData(data);
         searchHint.classList.remove('show-search-hint');
         songList.classList.add('adjust-height');
+        floatIn();
       })
     }
     searchForm.reset();
