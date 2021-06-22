@@ -2,6 +2,7 @@
 import loadContent from './route';
 import {storeUserName, getUserInfo} from './useData';
 import{fetchFav} from './favList';
+import{homeLeave, exploreEnter} from './animation';
 
 
 // check validation of registation
@@ -73,12 +74,16 @@ const body=document.querySelector('body');
 const checkAuth = auth.onAuthStateChanged(
   (user)=>{
     if(user){
-      location.hash="#explore"; 
-      loadContent(); 
-      getUserInfo(user.uid);
-      fetchFav(user.uid);
-      body.style.height="100%";
-      body.className="white-bg" ;
+      homeLeave();
+      setTimeout(()=>{
+        location.hash="#explore"; 
+        loadContent(); 
+        getUserInfo(user.uid);
+        fetchFav(user.uid);
+        body.style.height="100%";
+        exploreEnter()
+        // body.className="white-bg";
+      }, 1000);
     }else{
       console.log('no user');
       location.hash="#home";

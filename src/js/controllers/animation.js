@@ -7,6 +7,16 @@ const homeAnimation=()=>{
     .fromTo('.form-wrap', {x:10, opacity:0}, {x:0, opacity:1, duration:1.3, delay: 0.1, ease:"power2"})
 }
 
+const homeLeave=()=>{
+  const tl=gsap.timeline();
 
+  tl.to('.home-wrapper', {x:2000, opacity:0, duration:1})
+    .to('body',  {x:2000, backgroundColor:"#ffffff"}, "<")
+}
 
-export {homeAnimation};
+const exploreEnter=()=>{
+  const tl=gsap.timeline();
+
+  tl.fromTo('body', {x:2000}, {x:0, duration:1, ease:"power4.in"})
+}
+export {homeAnimation, homeLeave, exploreEnter};
