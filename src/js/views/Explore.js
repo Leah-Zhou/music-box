@@ -5,6 +5,7 @@ import {ToggleMenu, MoveSlider, trackNavigator} from "../controllers/navigation"
 import Nav from './Nav';
 import favMusic from './Fav';
 import album from './Album';
+// import { checkFavList } from "../controllers/favList";
 
 
 
@@ -31,7 +32,7 @@ export default class Explore  {
           </section>
 
         <section class="control-height">
-          <button class="expand-btn">
+          <button class="close-btn">
               <i class="fas fa-times fa-2x"></i>
           </button>
           <ul class="song-list">
@@ -69,11 +70,11 @@ export default class Explore  {
      ToggleMenu();
      printRecomd();
      trackNavigator();
-    //  printHotTrackList();
+    //  checkFavList()
    }
 }
 
-{/* <div class="transition-wall"></div> */}
+
 
 
 

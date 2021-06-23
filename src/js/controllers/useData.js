@@ -30,6 +30,17 @@ function cleanList(){
   songList.innerHTML='';
 }
 
+function closeSearchResult(){
+  const closeBtn=document.querySelector('.close-btn');
+  const songList =document.querySelector('.song-list');
+  closeBtn.style.display="block";
+  closeBtn.addEventListener('click', function(){
+  cleanList();
+  songList.classList.remove('adjust-height');
+  closeBtn.style.display="none";
+})
+}
+
   function printAllData(allData){
     const songList =document.querySelector('.song-list');
     const favList =document.querySelector('.fav-list'); 
@@ -50,13 +61,8 @@ function cleanList(){
        let print= printSongs({songSrc:group.preview, album:group.album.cover_medium, songId:group.id, songName:group.title_short, artist:group.artist.name, isFav:isFav});
        songList.innerHTML+=print;
     }; 
-    let expandBtn=document.querySelector('.expand-btn');
-    expandBtn.style.display="block";
-    expandBtn.addEventListener('click', function(){
-      cleanList();
-      songList.classList.remove('adjust-height');
-      expandBtn.style.display="none";
-    })
+
+    closeSearchResult();
     horizontalScroll(favList);
     horizontalScroll(songList);
   }
@@ -72,6 +78,9 @@ function cleanList(){
       const songList =document.querySelector('.song-list');
       const searchHint =document.querySelector('.search-hint');
       searchHint.classList.add('show-search-hint');
+      let closeBtn=document.querySelector('.close-btn');
+      closeBtn.style.display="none";
+
       getData(searchInput).then(data=>{
         printAllData(data);
         searchHint.classList.remove('show-search-hint');

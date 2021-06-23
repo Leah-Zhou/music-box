@@ -68,7 +68,6 @@ export default function controlMusic(musicContent){
          let grandParent=e.target.parentElement.parentElement;
          let coverImg =grandParent.querySelector('.recomd-spinner');
          coverImg.classList.add('animate-cover');
-         console.log(coverImg);
        }
      }else{
        playSong.pause();
@@ -78,7 +77,6 @@ export default function controlMusic(musicContent){
           let grandParent=e.target.parentElement.parentElement;
           let coverImg =grandParent.querySelector('.recomd-spinner');
           coverImg.classList.remove('animate-cover');
-          console.log(coverImg);
         }
      }   
    }

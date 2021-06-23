@@ -25,7 +25,6 @@ const header =new Headers({
 
 
 export async function getRecomd(id){
-  console.log('init the getchart');
   const request =await fetch(`https://deezerdevs-deezer.p.rapidapi.com/album/${id}`, {
     "method": "GET",
     "headers": header,
