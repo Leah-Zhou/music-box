@@ -26,8 +26,8 @@ export default class Explore  {
               <input type="submit" class="d-none" />
             </form>
             <div class="search-hint">
-              <img src="./imgs/loading-ball.svg" alt="loading ball" width="50px"/>
-              <p>music is on the way</p>
+              <img src="./imgs/loading.svg" alt="loading ball" width="60px"/>
+              <p>Music is on the way</p>
             </div>
           </section>
 
