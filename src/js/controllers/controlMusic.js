@@ -34,7 +34,6 @@ const selectFavs=(parent, fav)=>{
 }
 
 
-
 export default function controlMusic(musicContent){
   let isSongPlay=false;
   musicContent.addEventListener('click', e=>{
@@ -64,10 +63,23 @@ export default function controlMusic(musicContent){
        playSong.play();
        e.target.classList.remove('fa-play-circle');
        e.target.classList.add('fa-pause-circle');
+       
+       if(e.target.classList.contains('prev-play')){
+         let grandParent=e.target.parentElement.parentElement;
+         let coverImg =grandParent.querySelector('.recomd-spinner');
+         coverImg.classList.add('animate-cover');
+         console.log(coverImg);
+       }
      }else{
        playSong.pause();
         e.target.classList.remove('fa-pause-circle');
         e.target.classList.add('fa-play-circle');
+        if(e.target.classList.contains('prev-play')){
+          let grandParent=e.target.parentElement.parentElement;
+          let coverImg =grandParent.querySelector('.recomd-spinner');
+          coverImg.classList.remove('animate-cover');
+          console.log(coverImg);
+        }
      }   
    }
  })

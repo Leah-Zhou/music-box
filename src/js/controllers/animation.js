@@ -32,7 +32,5 @@ const exploreEnter=()=>{
 const floatIn=()=>{
   gsap.fromTo('.song-list li', {opacity:0, y:15}, {opacity:1, y:0, ease:"power2.inout", duration:1, delay:0.05})
 }
-const floatOut=()=>{
-  gsap.to('.song-list li', {opacity:0, y:15, ease:"power2.inout", duration:1})
-}
-export {homeAnimation, homeLeave, exploreEnter, floatIn, floatOut};
+
+export {homeAnimation, homeLeave, exploreEnter, floatIn};

@@ -47,7 +47,6 @@
 .dist{
   &>img{
     padding:1em;
-    // @include imgBorder(40px);
     max-height: 370px;
     max-width: 370px;
     border-radius: 500px;
@@ -56,7 +55,8 @@
     // object-fit: contain;
     object-position: center;
     position: relative;
-    position: relative;
+    z-index: 2;
+    // background: linear-gradient($secondary, $primary);
   }
   &>section{
     position: absolute;

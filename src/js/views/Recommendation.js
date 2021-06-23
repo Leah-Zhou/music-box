@@ -11,6 +11,7 @@
             </audio>
             <i class="fas fa-play-circle play play-btn prev-play" data-id="${songId}"></i>
           </section>
+          <div class="recomd-spinner"></div>
          </div>
           <div class="recomd-intro">
             <section>

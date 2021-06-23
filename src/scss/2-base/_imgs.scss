@@ -25,3 +25,29 @@
     margin-bottom: 0;
   }
 }
+@keyframes expanding {
+  0%{
+    transform:translateX(-50%) rotate(0deg); 
+  }
+  100%{
+
+    transform:translateX(-50%) rotate(360deg);
+  }
+}
+.recomd-spinner{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 1em;
+  width: 370px;
+  height: 370px;
+  max-height: 370px;
+  max-width: 370px;
+  transform: translateX(-50%);
+  border-radius: 500px;
+  background: linear-gradient($secondary, black);
+  z-index: 1;
+}
+.animate-cover{
+  animation: expanding 4s infinite ease;
+}

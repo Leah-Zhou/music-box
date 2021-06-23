@@ -28,8 +28,7 @@ const signInUser=()=>{
     e.preventDefault();
     const email=signInForm['signIn-email'].value;
     const password=signInForm['signIn-password'].value; 
-    auth.signInWithEmailAndPassword(email, password).then(cred=>{
-      console.log(cred);
+    auth.signInWithEmailAndPassword(email, password).then(()=>{
       homeLeave();
     }).catch(err=>{
       reminder.textContent=err.message;
