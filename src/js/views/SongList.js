@@ -5,7 +5,7 @@ export default function printSongs({songSrc, album, songId, songName, artist, is
   <li class="text-center" data-songId=${songId}>
    <div class="song-item card-style">
     <audio controls style="display:none" id=${songId}>
-      <source src=${songSrc} type="audio/ogg">
+      <source src=${songSrc} type="audio/mpeg">
     </audio>
     <div class="album">
       <img src=${album} alt="cover of ${songName}" class="cover my-1">

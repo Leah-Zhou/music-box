@@ -7,7 +7,7 @@
           <img src=${coverart} alt="${title}" class="d-block w-100 recomd-cover">
             <section>
             <audio controls style="display:none" id="${songId}">
-            <source src=${prevUrl} type="audio/ogg">
+            <source src=${prevUrl} type="audio/mpeg">
             </audio>
             <i class="fas fa-play-circle play play-btn prev-play" data-id="${songId}"></i>
           </section>

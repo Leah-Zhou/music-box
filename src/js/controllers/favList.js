@@ -13,7 +13,6 @@ import printSongs from '../views/SongList';
            }else{
               let removeNode =favSection.querySelector(`[data-songId="${songId}"]`);
               if (removeNode){
-                console.log('check parent');
                 removeNode.parentNode.removeChild(removeNode);
               }
 

@@ -19,7 +19,7 @@ export const EachTrack =({song,songUrl, songId})=>{
      <li>
        <p>${song}</p>
         <audio controls style="display: none" id=${songId}>
-           <source src=${songUrl} type="audio/ogg">
+           <source src=${songUrl} type="audio/mpeg">
         </audio>
         <i class="fas fa-play-circle fa-3x play play-btn" data-id=${songId}></i>
      </li>

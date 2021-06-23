@@ -70,9 +70,10 @@ export default class Explore  {
      printRecomd();
      trackNavigator();
     //  printHotTrackList();
-
    }
 }
+
+{/* <div class="transition-wall"></div> */}
 
 
 

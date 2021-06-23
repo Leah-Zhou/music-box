@@ -6,7 +6,6 @@ const stroeFavSongs=(favSongs)=>{
 const deleteFavSongs=(delSongs)=>{
   db.collection('musicApp').doc(delSongs).update({isFav:false});
   db.collection('musicApp').doc(delSongs).delete().then(()=>{
-    console.log('fav is delete')
   }).catch(err=>{console.error('error happen, not delete fav yet')});
 }
 
@@ -27,7 +26,6 @@ const selectFavs=(parent, fav)=>{
     stroeFavSongs(favSongs);
   }
   else{
-    console.log('active delete')
     let songId=parent.querySelector('.album-top').getAttribute('data-id');
     // console.log(favSongs);
     deleteFavSongs(songId);

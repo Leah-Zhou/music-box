@@ -29,7 +29,6 @@ const signInUser=()=>{
     const email=signInForm['signIn-email'].value;
     const password=signInForm['signIn-password'].value; 
     auth.signInWithEmailAndPassword(email, password).then(cred=>{
-      console.log(cred);
     }).catch(err=>{
       reminder.textContent=err.message;
       reminder.style.opacity='1';
@@ -85,7 +84,6 @@ const checkAuth = auth.onAuthStateChanged(
         // body.className="white-bg";
       }, 1000);
     }else{
-      console.log('no user');
       location.hash="#home";
       loadContent(); 
       body.style.height="100vh";
