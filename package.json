@@ -1,8 +1,8 @@
 {
-  "name": "music_web_app",
+  "name": "music_box",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/js/index.js",
   "scripts": {
     "build": "node_modules/.bin/webpack --mode production",
     "dev": "node_modules/.bin/webpack serve --mode development"
@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/Leah-Zhou/music-box/issues"
   },
-  "homepage": " https://leah-zhou.github.io/music-box/",
+  "homepage": " https://leah-zhou.github.io/music-box/#readme",
   "devDependencies": {
     "@babel/core": "^7.14.2",
     "@babel/preset-env": "^7.14.2",
