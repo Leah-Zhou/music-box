@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/Leah-Zhou/music-box/issues"
   },
-  "homepage": " https://leah-zhou.github.io/music-box/#readme",
+  "homepage": " https://leah-zhou.github.io/music-box/dist/#readme",
   "devDependencies": {
     "@babel/core": "^7.14.2",
     "@babel/preset-env": "^7.14.2",
