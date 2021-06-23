@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Leah-Zhou/music-web-app.git"
+    "url": "git+https://github.com/Leah-Zhou/music-box.git"
   },
   "author": "leah",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Leah-Zhou/music-web-app/issues"
+    "url": "https://github.com/Leah-Zhou/music-box/issues"
   },
-  "homepage": "https://github.com/Leah-Zhou/music-web-app#readme",
+  "homepage": " https://leah-zhou.github.io/music-box/",
   "devDependencies": {
     "@babel/core": "^7.14.2",
     "@babel/preset-env": "^7.14.2",
