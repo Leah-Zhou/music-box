@@ -3,7 +3,7 @@ import printSongs from '../views/SongList';
 import printRecomdList from '../views/Recommendation';
 import  printEachTrack, { EachTrack }  from '../views/TrackList';
 import horizontalScroll from './horizontalSrcoll';
-import { floatIn,floatOut} from './animation';
+import { floatIn} from './animation';
 
 
 // manipulate user info data:
@@ -46,6 +46,7 @@ function cleanList(){
       }else{
         isFav=false
       }
+
        let print= printSongs({songSrc:group.preview, album:group.album.cover_medium, songId:group.id, songName:group.title_short, artist:group.artist.name, isFav:isFav});
        songList.innerHTML+=print;
     }; 
@@ -53,7 +54,6 @@ function cleanList(){
     expandBtn.style.display="block";
     expandBtn.addEventListener('click', function(){
       cleanList();
-      floatOut();
       songList.classList.remove('adjust-height');
       expandBtn.style.display="none";
     })
@@ -78,6 +78,8 @@ function cleanList(){
         songList.classList.add('adjust-height');
         floatIn();
       })
+    }else{
+
     }
     searchForm.reset();
   })
@@ -108,7 +110,7 @@ function manipulateRecomd(){
 function printRecomd(){
   let hotTrack = document.querySelector('.track-list');
   let trackContainer= document.querySelector('.track-container');
-  let recomdId =[226774542,167645582,192580092,233347232,41373501,205117222];
+  let recomdId =[167645582,192580092,233347232,41373501,205117222,226774542];
   let isActive=false;
 
   for(const id of recomdId){

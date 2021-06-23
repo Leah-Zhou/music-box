@@ -31,12 +31,14 @@
   max-width: 800px;
   color:$primary;
   &>input[name="songInfo"]{
-    // background-color: #f0f0f0;
     border-radius: 50px;
-    // border:none;
     width: 100%;
     border:1px solid $secondary; 
+    transition: all 0.5s ease;
   }
+}
+input[name="songInfo"]:focus{
+  border:1px solid $primary;
 }
 .form-control:focus{
   border-color:$secondaryLight;

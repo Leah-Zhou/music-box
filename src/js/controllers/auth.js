@@ -29,6 +29,8 @@ const signInUser=()=>{
     const email=signInForm['signIn-email'].value;
     const password=signInForm['signIn-password'].value; 
     auth.signInWithEmailAndPassword(email, password).then(cred=>{
+      console.log(cred);
+      homeLeave();
     }).catch(err=>{
       reminder.textContent=err.message;
       reminder.style.opacity='1';
@@ -54,6 +56,7 @@ const signInUser=()=>{
 
     auth.createUserWithEmailAndPassword(email, password).then(cred=>{
       storeUserName(cred.user.uid, username);
+      homeLeave();
       console.log(cred.user.uid);
     }).catch(err=>{
       console.log(err.message)})
@@ -73,7 +76,6 @@ const body=document.querySelector('body');
 const checkAuth = auth.onAuthStateChanged(
   (user)=>{
     if(user){
-      homeLeave();
       setTimeout(()=>{
         location.hash="#explore"; 
         loadContent(); 
