@@ -1,8 +1,6 @@
-<!-- ![web-logo](dist\imgs\small-icon.png)
-### Music Box Mini Web App -->
 
 <p align="center">
-  <img src="dist\imgs\small-icon.png" alt="icon"/>
+  <img src="dist\imgs\small-icon.png" alt="icon" style="background: pink"/>
    <h5 align="center">Music Box Mini Web App</h5>
 </p>
 
